@@ -1,0 +1,53 @@
+.contenedor-login{
+    background-color: #32292F;
+    width: 100%;
+    height:90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario-login{
+    height: 20em;
+    width: 35em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.inputLogin{
+    padding: 0.7em;
+    width: 24em;
+    font-size: 1em;
+    border-radius: 7px;
+    margin: 0.8em;
+    border: none;
+    
+
+}
+.loginButton{
+    padding: 0.5em;
+    width: 18.5em;
+    font-size: 1.3em;
+    border-radius: 7px;
+    background-color:#70ABAF;
+    text-align: center;
+    margin: 1em;
+    color: white;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.loginButton:hover{
+    padding: 0.5em;
+    width: 18.3em;
+    font-size: 1.3em;
+    border-radius: 7px;
+    background-color: #99E1D9;
+    text-align: center;
+    margin: 1em;
+    color: #32292F;
+    transform: 1s;
+    cursor: pointer;
+    transition: 0.5s;
+   
+}
