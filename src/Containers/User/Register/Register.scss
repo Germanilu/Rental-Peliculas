@@ -1,0 +1,58 @@
+.registerDesign{
+
+    height: 31em;
+    
+    background-color: var(--pricol3);
+
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:right;
+}
+.registerDesignLeft{
+
+    height: 31em;
+    width: 20em;
+    
+    background-color: var(--pricol4);
+
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.registerDesignRight{
+
+    height: 31em;
+    width: 20em;
+    
+    background-color: var(--pricol4);
+
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:space-between; 
+
+}
+
+.bottonDesign{
+
+    height: 2.5em; 
+    width: 15em;
+
+    border-radius: 0.5em;
+    
+    background-color: var(--pricol3);
+
+    margin: 2em;
+
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;    
+
+}
+    
+
+    

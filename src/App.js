@@ -3,8 +3,9 @@ import './App.scss';
 import './Global.scss'
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Header from './Components/Header/Header'
-import Home from './Containers/Home/Home'
+import Header from './Components/Header/Header';
+import Home from './Containers/Home/Home';
+import Register from './Containers/User/Register/Register';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <Header/>
     <Routes>
       <Route path= '/' element= {<Home/>}/>
+      <Route path= '/register' element= {<Register/>}/>
     </Routes>
     
     
