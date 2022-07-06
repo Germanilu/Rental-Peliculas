@@ -2,7 +2,7 @@ import React from 'react';
 import './Home.scss';
 
 
-
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 
@@ -18,7 +18,6 @@ const Home = () => {
                 <div className="img img6"></div>
                 <div className="img img7"></div>
             </div>
-
         </div>
     )
 }
