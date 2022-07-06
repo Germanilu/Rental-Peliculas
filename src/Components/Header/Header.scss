@@ -1,14 +1,16 @@
 .headerDesign{
     height: 8em;
-    background-color: var(--pricol3) ;
+    background-color: rgb(0, 0, 0) ;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: white;
 }
 
 .headerTitle{
+    color: white;
     cursor: pointer;
-    margin-left: 0em;
+    margin-left: 0.5em;
     transition: 0.5s;
     &:hover{
         margin-left: 2em;
@@ -28,6 +30,6 @@
 
 .headerButton{
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
     cursor: pointer;
 }

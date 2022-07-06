@@ -1,0 +1,53 @@
+.homeDesign{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(../../img/imgbg4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.containerMovie{
+    height: 30em;
+    width: 70%;
+    // border: 1px solid rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.img{
+    border: 1px solid rgb(255, 255, 255);
+    height: 100%;
+    width: 20%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img1{
+    background-image: url(../../img/matrixresurrections.jpg); 
+}
+.img2{
+    background-image: url(../../img/iron.jpg);
+}
+.img3{
+    background-image: url(../../img/jhonwick.jpg);
+}
+.img4{
+    background-image: url(../../img/hobbshaw.jpg);
+}
+.img5{
+    background-image: url(../../img/ratatouille.jpg);
+}
+.img6{
+    background-image: url(../../img/antman.jpg);
+}
+.img7{
+    background-image: url(../../img/joker.jpg);
+}
