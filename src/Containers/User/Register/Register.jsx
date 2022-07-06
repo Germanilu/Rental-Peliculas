@@ -5,7 +5,7 @@ import axios from 'axios';
 import './Register.scss';
 
 
-const Register = () =>{
+const Register = (props) =>{
 
     //HOOK con los datos a rellenar
 
@@ -14,8 +14,9 @@ const Register = () =>{
         surname:'',
         age:'',
         email:'',
-        phone:'',
-        street:'',
+        mobile:'',
+        city:'',
+        address:'',
         password:'',
         password2:'',
 
@@ -47,16 +48,14 @@ const Register = () =>{
 
         //Primero, comprobación de campos vacíos
 
-        let datos = ['name','surname','age','email','phone','street','password', 'password2'];
+        let datos = ['name','surname','age','email','mobile',' address','password', 'password2'];
 
         for(let field of datos){
             if(userDades[field] === ''){
                  setMsgError(`Te ha faltado ${[field]} por rellenar`);
                 return;
             }
-        }
-
-            
+        }            
            
     // Con este IF, revisamos que la password, esta escrita igual las dos veces
     
@@ -65,14 +64,19 @@ const Register = () =>{
         setMsgError("Los dos password deben de coincidir");
         return;
         }
+            //enviamos los datos a la base de datos 
+        let intentoRegistro = await axios.post("https://buscadordepeliculas.herokuapp.com/api/auth/register", userDades);
 
-    
-    setRegistrado(true);
+        if(intentoRegistro.status === 200){
 
-        setTimeout(() => {
+            setRegistrado(true);
+
+            setTimeout(() => {
             navigate('/login');
         
-     },2000);
+            },2000);
+        }
+        
     }
 
      if(registrado === true){
@@ -91,17 +95,19 @@ const Register = () =>{
                     <input className='bottonDesign' placeholder='surname' type='text' name='surname' title='surname' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='age' type='text' name='age' title='age' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='email' type='email' name='email' title='email' onChange={updateUserDades}/>
+                    <input className='bottonDesign' placeholder='city' type='text' name='city' title='city' onChange={updateUserDades}/>
                 </div>
                 <div className="registerDesignRight">
-                    <input className='bottonDesign' placeholder='phone' type='text' name='phone' title='phone' onChange={updateUserDades}/>
-                    <input className='bottonDesign' placeholder='street' type='text' name='street' title='street' onChange={updateUserDades}/>
+                    <input className='bottonDesign' placeholder='mobile' type='text' name='mobile' title='mobile' onChange={updateUserDades}/>
+                    <input className='bottonDesign' placeholder='address' type='text' name='address' title='address' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='password' type='password' name='password' title='password' onChange={updateUserDades}/>
                     <input className="bottonDesign" placeholder='password2' type='password' name='password2' title='password2' onChange={updateUserDades}/>
                     <div className="designMessageError">
                     {msgError}
-                </div>  
-                <div className="bottonDesignRegister"onClick={()=>Registrate()}>REGISTRATE</div>                  
                     </div>
+
+                    <div className="bottonDesignRegister" onClick={()=>Registrate()}>REGISTRATE</div>                  
+                </div>
             </div> 
                    
         )
