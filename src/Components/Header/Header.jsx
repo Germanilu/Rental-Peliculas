@@ -19,7 +19,7 @@ const Header = () => {
             <h1 className='headerTitle' onClick={() => cambiarA('/')}>Bienvenido a mi app!</h1>
             <div className="headerButtonContainer">
                 <div className="headerButton" onClick={() => cambiarA('/login')}>Login</div>
-                <div className="headerButton" onClick={() => cambiarA('/register')}>Register</div>
+                <div className="headerButton" onClick={() => cambiarA('/register')}>Registrarse</div>
             </div>
         </div>
     )

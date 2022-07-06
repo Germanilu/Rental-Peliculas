@@ -1,21 +1,33 @@
 .headerDesign{
     height: 8em;
-    background-color: var(--pricol1) ;
+    background-color: var(--pricol3) ;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+.headerTitle{
+    cursor: pointer;
+    margin-left: 0em;
+    transition: 0.5s;
+    &:hover{
+        margin-left: 2em;
+        transition: 0.5s;
+    }
+}
+
+
 .headerButtonContainer{
-    width: 13em;
+    width: 12em;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    margin-right: 1em;
+    margin-right: 3em;
 }
 
 .headerButton{
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    cursor: pointer;
 }
