@@ -2,11 +2,9 @@ import React from 'react';
 import './Home.scss';
 
 
-import 'bootstrap/dist/css/bootstrap.css';
-
-
 
 const Home = () => {
+
     return (
         <div className='homeDesign'>
             <div className="containerMovie">
