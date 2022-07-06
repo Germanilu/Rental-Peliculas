@@ -32,22 +32,49 @@
 
 .img1{
     background-image: url(../../img/matrixresurrections.jpg); 
+    animation: prova 0.5s forwards 0.2s;
+    opacity: -1;
 }
+
+
 .img2{
     background-image: url(../../img/iron.jpg);
+    animation: prova 0.5s forwards 0.3s;
+    opacity: -1;
 }
 .img3{
     background-image: url(../../img/jhonwick.jpg);
+    animation: prova 0.5s forwards 0.4s;
+    opacity: -1;
 }
 .img4{
     background-image: url(../../img/hobbshaw.jpg);
+    animation: prova 0.5s forwards 0.5s;
+    opacity: -1;
 }
 .img5{
     background-image: url(../../img/ratatouille.jpg);
+    animation: prova 0.5s forwards 0.6s;
+    opacity: -1;
 }
 .img6{
     background-image: url(../../img/antman.jpg);
+    animation: prova 0.5s forwards 0.7s;
+    opacity: -1;
 }
 .img7{
     background-image: url(../../img/joker.jpg);
+    animation: prova 0.5s forwards 0.8s;
+    opacity: -1;
+}
+
+@keyframes prova {
+
+    0%{
+        opacity: -1;
+    }
+    100%{
+        opacity: 1;
+    }
+    
 }
