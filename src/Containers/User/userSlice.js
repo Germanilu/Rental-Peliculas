@@ -20,7 +20,7 @@ export const userSlice = createSlice({
         //El reducer logout recibe un estado y una accion, solo se ejecutara el estado que sera = que el initialState osea sin token
         logout: (state,action) => {
             return{
-                ...state.initialState
+                token: ""
             }
         }
     }
@@ -44,7 +44,7 @@ export const loginUser = (body) => async (dispatch) => {
 
     } catch (error) {
         //Como retorno este error en un setMsgError?
-        console.log(error.response.data.message)
+        console.log(error)
     }
 }
 
