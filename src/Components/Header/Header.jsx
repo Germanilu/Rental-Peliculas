@@ -43,6 +43,7 @@ const Header = () => {
             <div className="headerDesign">
                 <h1 className='headerTitle' onClick={() => cambiarA('/')}>El Rincon de la Pelicula</h1>
                 <div className="headerButtonContainer">
+                    <div className="headerButton" onClick={() => viajar('/movie')}>MovieDB</div>
                     <div className="headerButton" onClick={() => viajar('/profile')}>Profile</div>
                     <div className="headerButton" onClick={() => dispatch(logOut())}>Logout</div>
                 </div>
