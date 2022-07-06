@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { logingUser, userData } from '../userSlice';
+import { login, logingUser, loginUser, userData } from '../userSlice';
 import './Login.scss';
 /* import {useNavigate} from 'react-router-dom'; */
 
@@ -28,7 +28,9 @@ const Login = () => {
     }, []);
 
     useEffect(() => {
-
+        if (credenciales?.token !== "") {
+            navigate('/');
+        }
 
     });
 

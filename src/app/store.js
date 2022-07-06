@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit'
-import searchSlice from '../Containers/Home/searchSlice';
+
 import userSlice from '../Containers/User/userSlice';
 
 export default configureStore({
