@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './Profile.scss';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 import {updateUser, userData} from '../User/userSlice'
-
+import '../../Components/EditProfile/EditProfile'
+import EditProfile from '../../Components/EditProfile/EditProfile';
 
 
 
@@ -12,16 +13,12 @@ const Profile = () => {
     const datosUsuario = useSelector(userData)
    
     //hooks
-    const [hideContainer, setHideContainer] = useState(true);
+    const [hideContainer, setHideContainer] = useState(false);
 
 
-  
-    
     return (
          <div className='profileDesign'>
-           
             <div className="profileContainer">
-            
                 <div className="profileData">
                 <div className="containerName">Nombre: {datosUsuario.user_name} {datosUsuario.user_surname}</div>
                     <div className="containerEmail">Email: {datosUsuario.user_email}</div>
@@ -29,15 +26,20 @@ const Profile = () => {
                     <div className="containerMobile">Telefono: {datosUsuario.user_mobile}</div>
                     <div className="containerAge">Edad: {datosUsuario.user_age}</div>
                 </div>
-                    <div className="button" onClick={() => setHideContainer(false)}>Modificar</div>
+                    <div className="button" onClick={() => setHideContainer(true)}>Modificar</div>
             </div>
-                {
-                hideContainer ? <div className='hide'>Estoy Escondido</div>  : <div className='show'>Estoy visible <div onClick={() => setHideContainer(true)}>hola que tal</div> </div>
 
-                
-                
-                
+                {hideContainer &&
+                <div className='show'>
+                    <EditProfile/>
+                    <div className="button" onClick={() => setHideContainer(false)}>Cierrame</div>
+                </div>
+                    
                 }
+
+
+               
+                
          </div>
      )
 }

@@ -3,7 +3,7 @@
     background-color: tomato;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .profileContainer{
@@ -25,17 +25,11 @@
     border: 1px solid yellow;
 }
 
-.hide{
-    height: 20em;
-    width: 20em;
-    border: 1px solid blue;
-    display: none;
-}
 
 .show{
     height: 20em;
     width: 20em;
-    border: 1px solid blue;
-    display: block;
+   
+    
 }
 
