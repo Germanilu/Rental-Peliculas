@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    transition: 0.5s;
 }
 
 .profileContainer{
@@ -39,8 +40,6 @@
 
 .show{
     height: 20em;
-    width: 20em;
-   
-    
+    width: 20em; 
 }
 

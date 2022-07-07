@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Profile.scss';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
-import {updateUser, userData} from '../User/userSlice'
+import {userData} from '../User/userSlice'
 import '../../Components/EditProfile/EditProfile'
 import EditProfile from '../../Components/EditProfile/EditProfile';
 import { useNavigate } from 'react-router-dom';
