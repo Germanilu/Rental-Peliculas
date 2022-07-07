@@ -1,19 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Profile.scss';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 import {updateUser, userData} from '../User/userSlice'
 import '../../Components/EditProfile/EditProfile'
 import EditProfile from '../../Components/EditProfile/EditProfile';
-
+import { useNavigate } from 'react-router-dom';
 
 
 const Profile = () => {
      
     //Creo la variable que lee de Redux los datos de usuario
     const datosUsuario = useSelector(userData)
-   
+    const navigate = useNavigate();
     //hooks
     const [hideContainer, setHideContainer] = useState(false);
+
+  
+
+    useEffect(() => {
+
+    },[])
+
+    useEffect(() => {
+        if(datosUsuario.token === ""){
+            navigate("/");
+        }
+    })
 
 
     return (

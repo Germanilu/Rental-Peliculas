@@ -83,9 +83,10 @@ export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) =>{
         console.log(resultado)
 
         if(resultado.status === 200) {
-            console.log("entra aqui");
             //Hacemos un update local de las credenciales del usuario
              dispatch(update({perfilUsuario}));
+
+             console.log("perfilusuario", perfilUsuario);
           }
     
     } catch (error) {
