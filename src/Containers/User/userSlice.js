@@ -83,10 +83,14 @@ export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) =>{
         console.log(resultado)
 
         if(resultado.status === 200) {
+            //Si el usuario cambia email le fuerzo un logout
+           if(datosUsuario.user_email !== body.email){
+            dispatch(logout())
+           }else{
+            dispatch(update({perfilUsuario}));
+           }
             //Hacemos un update local de las credenciales del usuario
-             dispatch(update({perfilUsuario}));
-
-             console.log("perfilusuario", perfilUsuario);
+            
           }
     
     } catch (error) {
