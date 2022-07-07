@@ -22,8 +22,14 @@ export const userSlice = createSlice({
             return{
                 token: ""
             }
+        },
+        update:(state,action) => {
+            return{
+                ...state,
+                ...action.payload
+            }
         }
-    }
+    },
 });
 
 //Exporto loginUser (necesito que me la expliquen)
@@ -54,8 +60,41 @@ export const logOut = () => (dispatch) => {
     dispatch(logout())
 }
 
+
+//Update user
+export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) =>{
+    try {
+        let body = {
+            name: perfilUsuario.user_name,
+            surname: perfilUsuario.user_surname,
+            email: perfilUsuario.user_email,
+            address: perfilUsuario.user_address,
+            city: perfilUsuario.user_city,
+            mobile: perfilUsuario.user_mobile
+            
+        }
+        console.log(body)
+
+        let config = {
+            headers: {Authorization: `Bearer ${datosUsuario.token}`}
+        };
+
+        let resultado = await axios.put(`https://buscadordepeliculas.herokuapp.com/api/users/${datosUsuario.user_id}`,body, config);
+        console.log(resultado)
+
+        if(resultado.status === 200) {
+            console.log("entra aqui");
+            //Hacemos un update local de las credenciales del usuario
+             dispatch(update({perfilUsuario}));
+          }
+    
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 //Exporto los reducers login,logout
-export const {login,logout} = userSlice.actions;
+export const {login,logout,update} = userSlice.actions;
 
 //No entiendo bien esta linea
 export const userData = (state) => state.user;
