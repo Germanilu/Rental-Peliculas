@@ -15,10 +15,10 @@ const Profile = () => {
     //hooks
     const [hideContainer, setHideContainer] = useState(false);
 
-  
+    
 
     useEffect(() => {
-
+     
     },[])
 
     useEffect(() => {
@@ -37,14 +37,14 @@ const Profile = () => {
                     <div className="containerStreet">Dirección: {datosUsuario.user_address} {datosUsuario.user_city}</div>
                     <div className="containerMobile">Telefono: {datosUsuario.user_mobile}</div>
                     <div className="containerAge">Edad: {datosUsuario.user_age}</div>
-                </div>
                     <div className="button" onClick={() => setHideContainer(true)}>Modificar</div>
+                </div>
+                    
             </div>
 
                 {hideContainer &&
                 <div className='show'>
                     <EditProfile/>
-                    <div className="button" onClick={() => setHideContainer(false)}>Cierrame</div>
                 </div>
                     
                 }
