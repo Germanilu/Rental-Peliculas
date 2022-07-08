@@ -17,12 +17,9 @@ const Header = () => {
     const dispatch = useDispatch()
 
 
-    const [hideContainer, setHideContainer] = useState(false);
+    const [show, setShow] = useState(false);
 
-    const viajar = (destino) => {
-        navegador(destino)
-    };
-    
+ 
 
     const cambiarA = (endpoint) => {
         navegador(endpoint)
@@ -45,16 +42,12 @@ const Header = () => {
             <div className="headerDesign">
                 <h1 className='headerTitle' onClick={() => cambiarA('/')}>El Rincon de la Pelicula</h1>
                 <div className="headerButtonContainer">
-                    <div className="headerButton" onClick={() => viajar('/movie')}>MovieDB</div>
-                    <div className="headerButton" onClick={() => setHideContainer(true)}>Profile</div>
+                    <div className="headerButton" onClick={() => cambiarA('/movie')}>MovieDB</div>
+                    <div className="headerButton" onClick={() => setShow(!show)}>Profile</div>
                     <div className="headerButton" onClick={() => dispatch(logOut())}>Logout</div>
                 </div>
-                {hideContainer &&
-                <div className='show'>
-                    <Profile/>
-                </div>
-                    
-                }
+                {show ? <Profile/> : null}
+                
             </div>
         )
     }
