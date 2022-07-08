@@ -8,6 +8,8 @@ import Header from './Components/Header/Header';
 import Home from './Containers/Home/Home';
 import Register from './Containers/User/Register/Register';
 import Login from './Containers/User/Login/Login'
+import EditProfile from './Components/EditProfile/EditProfile'
+
 
 
 function App() {
@@ -15,9 +17,10 @@ function App() {
     <BrowserRouter>
     <Header/>
     <Routes>
-      <Route path= '/' element= {<Home/>}/>
+      <Route path= '/' element= {<Home/> } />
       <Route path= '/register' element= {<Register/>}/>
       <Route path= '/login' element= {<Login/>}/>
+      <Route path= '/edit-profile' element= {<EditProfile/>}/>
     </Routes>
     
     
