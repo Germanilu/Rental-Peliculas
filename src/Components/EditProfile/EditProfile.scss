@@ -1,0 +1,23 @@
+.editProfileDesign{
+    margin-top: 2em;
+    height: 25em;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    animation: prova 1.5s forwards 0.2s;
+    opacity: -1;
+  
+}
+
+@keyframes prova {
+    0%{
+        opacity: -1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
