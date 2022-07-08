@@ -90,14 +90,14 @@ const Register = (props) =>{
     }else{
         return(
             <div className ='registerDesign'>  
-                <div className="registerDesignLeft">
+                <div className="registerDesigR">
                     <input className='bottonDesign' placeholder='name' type='text' name='name' title='name' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='surname' type='text' name='surname' title='surname' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='age' type='text' name='age' title='age' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='email' type='email' name='email' title='email' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='city' type='text' name='city' title='city' onChange={updateUserDades}/>
                 </div>
-                <div className="registerDesignRight">
+                <div className="registerDesigR">
                     <input className='bottonDesign' placeholder='mobile' type='text' name='mobile' title='mobile' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='address' type='text' name='address' title='address' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='password' type='password' name='password' title='password' onChange={updateUserDades}/>

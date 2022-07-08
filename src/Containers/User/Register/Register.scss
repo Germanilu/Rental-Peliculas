@@ -1,79 +1,88 @@
-.registerDesign{
-
-    height: 31em;
-    
-    background-color: var(--pricol3);
-
+.registerDesign {
+   background-image: url('../../../img/palomitas.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    width: 100%;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
 }
-.registerDesignLeft{
 
-    height: 31em;
-    width: 15em;
-    
-    background-color: var(--pricol4);
+.registerDesigR {
 
+    height: 21em;
+    width: 25em;
+    background-color: var(--pricol2);
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    border-radius: 6em 0em 0em 6em;
+    justify-content: center;
+    border-radius: 1em;
+    margin: 2em;
+    opacity: 0.7;
+    transition: 0.5s;
+    padding: 0.5em;
+    box-shadow: 10px 10px 16px 10px rgba(0,0,0,0.27);
+}
+
+.registerDesigR:hover{
+    background-color: var(--pricol5);
+    opacity: 0.98;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+/* .registerDesignRight {
+
+    height: 21em;
+    width: 25em;
+    background-color: var(--pricol2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2em;
+    margin: 3em;
+    opacity: 0.9;
+    
+
+}
+ */
+ .bottonDesign {
+    width: 90%;
+    height: 1.8em;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 0.3em;
+    background-color: var(--pricol3);
+    margin: 0.7em;
+    
+
+} 
+
+.bottonDesignRegister {
+
+    height: 2.5em;
+    width: 90%;
+    border-radius: 0.2em;
+    background-color: var(--pricol4);
+    margin: 1.5em;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.bottonDesignRegister:hover {
+
    
-
+    background-color: var(--pricol1);
+    cursor: pointer;
+    transition: 0.5s;
+    color: white;
+    font: bold;
 }
-.registerDesignRight{
-
-    height: 31em;
-    width: 15em;
-    
-    background-color: var(--pricol4);
-
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content:space-between; 
-    border-radius: 0em 6em 6em 0em;
-
-}
-
-.bottonDesign{
-
-    height: 2.5em; 
-    width: 10em;
-
-    border-radius: 0.5em;
-    
-    background-color: var(--pricol3);
-
-    margin: 2em;
-
-    display: flex;
-    flex-direction: center;
-    align-items: center;
-    justify-content: center;    
-
-}
-
-.bottonDesignRegister{
-
-    height: 2.5em; 
-    width: 10em;
-
-    border-radius: 0.5em;
-    
-    background-color: green;
-
-    margin: 2em;
-
-    display: flex;
-    flex-direction: center;
-    align-items: center;
-    justify-content: center; 
-}
-
-    
-
-    
