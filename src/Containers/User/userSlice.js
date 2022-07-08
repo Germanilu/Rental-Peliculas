@@ -3,6 +3,11 @@ import axios from 'axios';
 import jwt from 'jwt-decode';
 
 
+
+
+
+
+
 export const userSlice = createSlice({
     name: 'user',
     initialState: {
@@ -85,6 +90,8 @@ export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) =>{
         if(resultado.status === 200) {
             //Si el usuario cambia email le fuerzo un logout
            if(datosUsuario.user_email !== body.email){
+            console.log("datosusuario",datosUsuario.user_email)
+            console.log("body",body.email)
             dispatch(logout())
            }else{
             dispatch(update({perfilUsuario}));

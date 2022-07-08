@@ -17,10 +17,11 @@ const Profile = () => {
     
 
     useEffect(() => {
-     
+        
     },[])
 
     useEffect(() => {
+        console.log("me actualize")
         if(datosUsuario.token === ""){
             navigate("/");
         }
@@ -38,14 +39,7 @@ const Profile = () => {
                     <div className="containerAge">Edad: {datosUsuario.user_age}</div>
                     <div className="button" onClick={() => navigate('/edit-profile')}>Modificar</div>
                 </div>
-                    
             </div>
-
-               
-
-
-               
-                
          </div>
      )
 }
