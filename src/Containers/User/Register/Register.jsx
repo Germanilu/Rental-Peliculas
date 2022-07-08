@@ -56,18 +56,25 @@ const Register = (props) =>{
                 return;
             }
         }        
-            //con esto válidamos que el email este correctamente.
+            //Con esto válidamos que el email este correctamente.
             if(!userDades.email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)){
                 setMsgError('introduce un email válido!');
                 return;
             }  
+
+            //Validar telf correcto
+            if(!userDades.mobile.match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/)){
+                setMsgError('el telefono tiene que ser correcto!');
+                return;
+
+            }
                        
             // Con este IF, revisamos que la password, esta escrita igual las dos veces.
             
             if(userDades.password !== userDades.password2){
             
-            setMsgError("Los dos password deben de coincidir");
-            return;
+                setMsgError("Los dos password deben de coincidir");
+                return;
             }
 
             //La pasword tiene que ser de un tamaño especificado, en este caso entre 6 y 10 digitos.
