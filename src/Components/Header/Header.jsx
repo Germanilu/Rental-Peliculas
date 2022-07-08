@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './Header.scss';
 
@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 //Importo userData y logOut del userSlice
 import {userData, logOut} from '../../Containers/User/userSlice'
-
+import Profile from '../../Containers/Profile/Profile'
 
 const Header = () => {
 
@@ -16,6 +16,8 @@ const Header = () => {
     let navegador = useNavigate();
     const dispatch = useDispatch()
 
+
+    const [hideContainer, setHideContainer] = useState(false);
 
     const viajar = (destino) => {
         navegador(destino)
@@ -44,9 +46,15 @@ const Header = () => {
                 <h1 className='headerTitle' onClick={() => cambiarA('/')}>El Rincon de la Pelicula</h1>
                 <div className="headerButtonContainer">
                     <div className="headerButton" onClick={() => viajar('/movie')}>MovieDB</div>
-                    <div className="headerButton" onClick={() => viajar('/profile')}>Profile</div>
+                    <div className="headerButton" onClick={() => setHideContainer(true)}>Profile</div>
                     <div className="headerButton" onClick={() => dispatch(logOut())}>Logout</div>
                 </div>
+                {hideContainer &&
+                <div className='show'>
+                    <Profile/>
+                </div>
+                    
+                }
             </div>
         )
     }
