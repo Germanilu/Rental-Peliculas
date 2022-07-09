@@ -9,6 +9,7 @@ import jwt from 'jwt-decode';
 
 
 export const userSlice = createSlice({
+    //Nombre que tiene el slice
     name: 'user',
     initialState: {
         token:""

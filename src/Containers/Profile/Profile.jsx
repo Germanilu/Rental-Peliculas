@@ -12,20 +12,20 @@ const Profile = () => {
     const datosUsuario = useSelector(userData)
     const navigate = useNavigate();
     //hooks
-  
-
     
-
     useEffect(() => {
         
     },[])
 
     useEffect(() => {
-        console.log("me actualize")
+        console.log("me actualize",datosUsuario)
         if(datosUsuario.token === ""){
             navigate("/");
         }
     })
+
+
+
 
 
     return (
@@ -37,8 +37,9 @@ const Profile = () => {
                     <div className="containerStreet">Dirección: {datosUsuario.user_address} {datosUsuario.user_city}</div>
                     <div className="containerMobile">Telefono: {datosUsuario.user_mobile}</div>
                     <div className="containerAge">Edad: {datosUsuario.user_age}</div>
-                    <div className="button" onClick={() => navigate('/edit-profile')}>Modificar</div>
+                    <div className="button" onClick={() => navigate('/edit-profile')}>Modificar</div>  
                 </div>
+                
             </div>
          </div>
      )

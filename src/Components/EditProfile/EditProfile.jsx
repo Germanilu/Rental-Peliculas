@@ -19,7 +19,8 @@ const EditProfile = () => {
         user_email: datosUsuario.user_email,
         user_address: datosUsuario.user_address,
         user_city: datosUsuario.user_city,
-        user_mobile: datosUsuario.user_mobile
+        user_mobile: datosUsuario.user_mobile,
+        user_token: datosUsuario.user_token
     })
 
     
