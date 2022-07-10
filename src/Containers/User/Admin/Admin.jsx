@@ -9,7 +9,7 @@ const Admin = () => {
 
     const datosUsuario = useSelector(userData)
 
-   const [cambiarPantalla, setCambiarPantalla] = useState(["hola"])
+   const [cambiarPantalla, setCambiarPantalla] = useState([])
 
     const buscarUsuarios = async () => {
         
@@ -19,8 +19,8 @@ const Admin = () => {
         }
         //Llamada axios con auth
         let resultado = await axios.get("https://buscadordepeliculas.herokuapp.com/api/users/",config)
-        console.log(resultado.data.data[0].name)
-        setCambiarPantalla(resultado.data.data[0].name)
+        console.log(resultado.data.data)
+        setCambiarPantalla(resultado.data.data)
     }
 
 
@@ -49,7 +49,16 @@ const Admin = () => {
 
             <div className="adminResult">
                 
-                {cambiarPantalla}
+                {cambiarPantalla.map(id => {
+                    return(
+                        <div className='singContainerAdminResult'>
+                            id: {id._id} <br />
+                            Email: {id.email} <br />
+                            Name: {id.name} <br />
+                            Created: {id.createdAt} <br />                            
+                        </div>
+                    )
+                })}
                 
             </div>
 
