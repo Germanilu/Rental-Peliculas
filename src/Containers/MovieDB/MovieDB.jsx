@@ -53,25 +53,27 @@ const MovieDB = () => {
 
 
     return (
-        <div>
-
-            <div className="" >
-                <input type="text" placeholder='Buscar' id="buscador" onChange={(event) => filtrar(event.target.value)} />
+        <div className='styleBD'>
+            <div className="searchDesign" >
+                <input type="text" placeholder='Buscar...' id="buscador" onChange={(event) => filtrar(event.target.value)} />
             </div>
-
-            <div className='styleBD'>
+            
+            <div className='prova'>
 
                 {
                     peliculasMostrar.map(pelicula => {
+                        console.log(pelicula)
 
                         return (
-                            <div className="cardFilm" key={pelicula.id}>{pelicula.name}</div>
+                            <div className="cardMovie" key={pelicula.id}>
+                                <img className='imgCardMovie' src={pelicula.img}></img>
+                            </div>
                         )
                     })
                 }
             </div>
-
         </div>
+       
     )
 };
 

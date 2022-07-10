@@ -35,8 +35,6 @@ const Admin = () => {
         console.log(resultado.data.data)
         setCambiarPantalla(resultado.data.data)
         console.log(resultado.lenght)
-
-
     }
 
 
