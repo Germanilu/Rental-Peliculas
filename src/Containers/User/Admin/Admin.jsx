@@ -3,10 +3,13 @@ import './Admin.scss'
 import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 import {userData} from '../userSlice'
+import { useState } from 'react';
  
 const Admin = () => {
 
     const datosUsuario = useSelector(userData)
+
+   const [cambiarPantalla, setCambiarPantalla] = useState(["hola"])
 
     const buscarUsuarios = async () => {
         
@@ -16,11 +19,12 @@ const Admin = () => {
         }
         //Llamada axios con auth
         let resultado = await axios.get("https://buscadordepeliculas.herokuapp.com/api/users/",config)
-        console.log(resultado.data.data)
+        console.log(resultado.data.data[0].name)
+        setCambiarPantalla(resultado.data.data[0].name)
     }
 
 
-
+   
 
      return (
          <div className='adminDesign'>
@@ -44,7 +48,9 @@ const Admin = () => {
             </div>
 
             <div className="adminResult">
-                Hola soy el resultado
+                
+                {cambiarPantalla}
+                
             </div>
 
          </div>
