@@ -23,10 +23,11 @@ const Login = () => {
     }
 
     useEffect(() => {
-        
+       
         if(credenciales?.token !== ""){
             navigate('/')
         }
+        
 
     }, []);
 

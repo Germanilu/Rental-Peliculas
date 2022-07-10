@@ -7,7 +7,6 @@ import jwt from 'jwt-decode';
 
 
 
-
 export const userSlice = createSlice({
     //Nombre que tiene el slice
     name: 'user',
@@ -40,11 +39,15 @@ export const userSlice = createSlice({
 
 //Exporto loginUser (necesito que me la expliquen)
 export const loginUser = (body) => async (dispatch) => {
+
+
+   
+
     try {
         //Utilizo axios
         const user = await axios.post("https://buscadordepeliculas.herokuapp.com/api/auth/login", body)
         //Console.log para que me muestre los datos del usuario (id/user/token)
-        console.log(user)
+        console.log("Soy user",user)
 
         //Decodifico el token
         let decodificada = jwt(user.data.token)

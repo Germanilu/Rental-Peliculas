@@ -10,6 +10,7 @@ import Register from './Containers/User/Register/Register';
 import Login from './Containers/User/Login/Login'
 import MovieDB from './Containers/MovieDB/MovieDB';
 import EditProfile from './Components/EditProfile/EditProfile'
+import Admin from './Containers/User/Admin/Admin';
 
 
 
@@ -23,6 +24,7 @@ function App() {
       <Route path= '/login' element= {<Login/>}/>
       <Route path='/movie' element={<MovieDB/>}/>
       <Route path= '/edit-profile' element= {<EditProfile/>}/>
+      <Route path= '/admin' element= {<Admin/>}/>
     </Routes>
     
     
