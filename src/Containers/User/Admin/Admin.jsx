@@ -11,6 +11,7 @@ const Admin = () => {
 
    const [cambiarPantalla, setCambiarPantalla] = useState([])
 
+
     const buscarUsuarios = async () => {
         
         //Creo un objeto ocnfig donde metola Auth del token
@@ -19,12 +20,27 @@ const Admin = () => {
         }
         //Llamada axios con auth
         let resultado = await axios.get("https://buscadordepeliculas.herokuapp.com/api/users/",config)
-        console.log(resultado.data.data)
         setCambiarPantalla(resultado.data.data)
+        console.log(resultado)
     }
 
 
-   
+    const buscarOrdenes = async () => {
+        let config = {
+            headers: {Authorization: `Bearer ${datosUsuario.token}`}
+        }
+
+        let resultado = await axios.get("https://buscadordepeliculas.herokuapp.com/api/orders",config)
+
+        console.log(resultado.data.data)
+        setCambiarPantalla(resultado.data.data)
+        console.log(resultado.lenght)
+
+
+    }
+
+
+//    console.log("Soy cambiarpantalla",cambiarPantalla[0].movieName)
 
      return (
          <div className='adminDesign'>
@@ -36,8 +52,7 @@ const Admin = () => {
                 </div>
                 <div className='adminRow'>
                 <p>Buscar todas las ordenes</p>
-                <input type="text" />
-                <button>Buscar</button>
+                <button onClick={() => buscarOrdenes()}>Buscar</button>
                 </div>
                 <div className='adminRow'>
                 <p>Buscar ordenes por usuario</p>
@@ -48,16 +63,32 @@ const Admin = () => {
             </div>
 
             <div className="adminResult">
-                
+
                 {cambiarPantalla.map(id => {
+                   if( cambiarPantalla[0].movieName !== undefined ){
                     return(
+                        
                         <div className='singContainerAdminResult'>
-                            id: {id._id} <br />
-                            Email: {id.email} <br />
-                            Name: {id.name} <br />
-                            Created: {id.createdAt} <br />                            
+                          <strong> Order ID: </strong> {id._id} <br />
+                          <strong> User ID:</strong> {id.userId} <br />
+                          <strong> Movie Name:</strong>  {id.movieName} <br />
+                          <strong>Order Date:</strong>   {id.orderDate} <br />
+                          <strong>Return Date:</strong>  {id.returnDate} <br />                            
                         </div>
                     )
+                   }else{
+                    return(
+                        
+                        <div className='singContainerAdminResult'>
+                          <strong> ID:</strong>  {id._id} <br />
+                          <strong> Email:</strong> {id.email} <br />
+                          <strong>   Name:</strong>  {id.name} <br />
+                          <strong> Created:</strong> {id.createdAt} <br />                            
+                        </div>
+                    )
+                   }
+                    
+                    
                 })}
                 
             </div>
