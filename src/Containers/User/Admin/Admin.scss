@@ -1,0 +1,29 @@
+.adminDesign{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 3em;
+}
+
+.adminPanel{
+    width: 30%;
+    height: 20em;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.adminRow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.adminResult{
+    border: 1px solid black;
+    height: 30em;
+    width: 50%;
+}
