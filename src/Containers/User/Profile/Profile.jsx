@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Profile.scss';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
-import {userData} from '../User/userSlice'
-import '../../Components/EditProfile/EditProfile'
+import {userData} from '../userSlice'
+import '../../../Components/EditProfile/EditProfile'
 import { useNavigate } from 'react-router-dom';
 
 

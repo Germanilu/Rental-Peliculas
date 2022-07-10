@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 //Importo userData y logOut del userSlice
 import {userData, logOut} from '../../Containers/User/userSlice'
-import Profile from '../../Containers/Profile/Profile'
+import Profile from '../../Containers/User/Profile/Profile'
 
 const Header = () => {
 
