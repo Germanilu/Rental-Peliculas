@@ -16,30 +16,24 @@ const MovieDB = () => {
     //hook de películas
     const [peliculasDefecto, setPeliculasDefecto] = useState([]);
     const [peliculasFiltradas, setPeliculasFiltradas] = useState([]);
-    const [isHovering, setIsHovering] = useState(false)
-
-    const [id, setId] = useState()
+    const [isHovering, setIsHovering] = useState(-1)
 
 
-    // const buscaId = () => {
-    //     peliculasDefecto.map(pelicula => {
-    //         console.log(pelicula._id)
-           
-    //     })
-    // }
-    // buscaId()
 
-    const handleMouseOver = () => {
 
-       setIsHovering(true)
+   
+
+    const handleMouseOver = (name) => {
+     
+        setIsHovering(name)   
         
     }
 
-    const handleMouseOut = () => {
-       setIsHovering(false)
+    const handleMouseOut = (i) => {
+       setIsHovering(i)
     }
 
-
+    
     const peliculaSeleccionada = () => {
 
         navegador('/detail')
@@ -94,9 +88,9 @@ const MovieDB = () => {
                     peliculasMostrar.map((pelicula) => {
 
                         return (
-                            <div className='cardMovie' key={pelicula.id} >
-                                <div className={isHovering? "movieDescriptionShow": "movieDescriptionHide"} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={() => peliculaSeleccionada()}>{pelicula.name}</div>
-                                <img className={isHovering?  "imgCardMovieHide": "imgCardMovieShow"} src={pelicula.img} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={() => peliculaSeleccionada()}></img>
+                            <div className='cardMovie' key={pelicula.name} onMouseOver={() => handleMouseOver(pelicula.name)} onMouseOut={() => handleMouseOut(-1)}>
+                                <div className={isHovering == pelicula.name? "movieDescriptionShow": "movieDescriptionHide"}  onClick={() => peliculaSeleccionada()}>{pelicula.name}</div>
+                                <img className={isHovering == pelicula.name?  "imgCardMovieHide": "imgCardMovieShow"} src={pelicula.img} onMouseEnter={() => handleMouseOver(pelicula.name)} onMouseLeave={() => handleMouseOut(-1)} onClick={() => peliculaSeleccionada()}></img>
                             </div>
                         )
                     })
