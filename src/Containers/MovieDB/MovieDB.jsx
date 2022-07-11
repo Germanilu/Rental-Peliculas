@@ -14,17 +14,44 @@ const MovieDB = () => {
     //hook de películas
     const [peliculasDefecto, setPeliculasDefecto] = useState([]);
     const [peliculasFiltradas, setPeliculasFiltradas] = useState([]);
+    const [isHovering, setIsHovering] = useState(false)
+
+    const [id, setId] = useState()
+
+
+    // const buscaId = () => {
+    //     peliculasDefecto.map(pelicula => {
+    //         console.log(pelicula._id)
+           
+    //     })
+    // }
+    // buscaId()
+
+    const handleMouseOver = () => {
+
+       setIsHovering(true)
+        
+    }
+
+    const handleMouseOut = () => {
+       setIsHovering(false)
+    }
+
+
+    const peliculaSeleccionada = () => {
+
+        navegador('/detail')
+    }
 
 
     useEffect(() => {
 
         peliculasDB();
+        
 
     }, []);
 
     useEffect(() => {
-
-
 
     });
 
@@ -33,7 +60,6 @@ const MovieDB = () => {
         try {
             let peliculas = await axios.get('https://buscadordepeliculas.herokuapp.com/api/movie/all');
             setPeliculasDefecto(peliculas.data.data);
-            console.log(peliculas.data.data);
         } catch (error) {
 
             console.log(error)
@@ -49,7 +75,7 @@ const MovieDB = () => {
 
     }
 
-    const peliculasMostrar = peliculasFiltradas.length > 0 ? peliculasFiltradas : peliculasDefecto;
+    const peliculasMostrar = peliculasFiltradas.length > 0 ? peliculasFiltradas : peliculasDefecto ;
 
 
     return (
@@ -57,23 +83,23 @@ const MovieDB = () => {
             <div className="searchDesign" >
                 <input type="text" placeholder='Buscar...' id="buscador" onChange={(event) => filtrar(event.target.value)} />
             </div>
-            
-            <div className='prova'>
+
+            <div className='containerMovieDb'>
 
                 {
-                    peliculasMostrar.map(pelicula => {
-                        console.log(pelicula)
+                    peliculasMostrar.map((pelicula) => {
 
                         return (
-                            <div className="cardMovie" key={pelicula.id}>
-                                <img className='imgCardMovie' src={pelicula.img}></img>
+                            <div className='cardMovie' key={pelicula.id} >
+                                <div className={isHovering? "movieDescriptionShow": "movieDescriptionHide"} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={() => peliculaSeleccionada()}>{pelicula.name}</div>
+                                <img className={isHovering?  "imgCardMovieHide": "imgCardMovieShow"} src={pelicula.img} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={() => peliculaSeleccionada()}></img>
                             </div>
                         )
                     })
                 }
             </div>
         </div>
-       
+
     )
 };
 

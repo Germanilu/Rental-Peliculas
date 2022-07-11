@@ -11,7 +11,7 @@ import Login from './Containers/User/Login/Login'
 import MovieDB from './Containers/MovieDB/MovieDB';
 import EditProfile from './Components/EditProfile/EditProfile'
 import Admin from './Containers/User/Admin/Admin';
-
+import MovieDetail from './Containers/MovieDetail/MovieDetail'
 
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
       <Route path='/movie' element={<MovieDB/>}/>
       <Route path= '/edit-profile' element= {<EditProfile/>}/>
       <Route path= '/admin' element= {<Admin/>}/>
+      <Route path= '/detail' element= {<MovieDetail/>}/>
     </Routes>
     
     
