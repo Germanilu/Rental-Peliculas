@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MovieDB.scss';
+import { userData } from '../../Containers/User/userSlice';
 import { useSelector, useDispatch, } from 'react-redux';
 /*import{searchData} from '../../Containers/User/userSlice' */
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const MovieDB = () => {
     /* 
         let peliculas = useSelector(searchData); */
+    const datosUsuario = useSelector(userData)
     let dispatch = useDispatch();
     let navegador = useNavigate();
     //hook de películas
@@ -52,7 +54,9 @@ const MovieDB = () => {
     }, []);
 
     useEffect(() => {
-
+        if(datosUsuario.token === ""){
+            navegador('/')
+        }
     });
 
     const peliculasDB = async () => {

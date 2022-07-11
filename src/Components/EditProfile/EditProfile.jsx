@@ -33,6 +33,17 @@ const EditProfile = () => {
     }
 
 
+    useEffect(() => {
+
+    },[])
+
+    useEffect(() => {
+        if(datosUsuario.token === ""){
+            navigate('/')
+        }
+    })
+
+
     return (
 
         <div className='editProfileDesign'>
