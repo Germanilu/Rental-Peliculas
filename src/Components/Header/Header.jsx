@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 //Importo userData y logOut del userSlice
 import {userData, logOut} from '../../Containers/User/userSlice'
-import Profile from '../../Containers/Profile/Profile'
+import Profile from '../../Containers/User/Profile/Profile'
 
 const Header = () => {
 
@@ -36,9 +36,23 @@ const Header = () => {
                 </div>
             </div>
         )
+    }else if(credenciales?.user_role == "super_admin"){
+        
+        return(
+            <div className="headerDesign">
+                <h1 className='headerTitle' onClick={() => cambiarA('/')}>El Rincon de la Pelicula</h1>
+                <div className="headerButtonContainer">
+                    <div className="headerButton" onClick={() => cambiarA('/movie')}>MovieDB</div>
+                    <div className="headerButton" onClick={() => setShow(!show)}>Profile</div>
+                    <div className="headerButton" onClick={() => cambiarA('/admin')}>Admin</div>
+                    <div className="headerButton" onClick={() => dispatch(logOut())}>Logout</div>
+                </div>
+                {show ? <Profile/> : null}
+                
+            </div>
+        )
     }else{
         return(
-
             <div className="headerDesign">
                 <h1 className='headerTitle' onClick={() => cambiarA('/')}>El Rincon de la Pelicula</h1>
                 <div className="headerButtonContainer">

@@ -19,7 +19,8 @@ const EditProfile = () => {
         user_email: datosUsuario.user_email,
         user_address: datosUsuario.user_address,
         user_city: datosUsuario.user_city,
-        user_mobile: datosUsuario.user_mobile
+        user_mobile: datosUsuario.user_mobile,
+        user_token: datosUsuario.user_token
     })
 
     
@@ -42,7 +43,7 @@ const EditProfile = () => {
             <input className='input' value={perfilUsuario.user_city} type='text' name='user_city' title='city' onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_mobile} type='text' name='user_mobile' title='mobile' onChange={handlerInputs} lenght='30' />
 
-            <div className="button" onClick={()=>dispatch(updateUser(datosUsuario,perfilUsuario))}>Guardar</div>
+            <div className="button" onClick={()=>dispatch(updateUser(datosUsuario,perfilUsuario),navigate('/'))}>Guardar</div>
             <div className="button" onClick={() => navigate('/')}>Cerrar</div>
 
             
