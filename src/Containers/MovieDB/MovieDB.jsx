@@ -76,8 +76,7 @@ const MovieDB = () => {
     }
 
     const peliculasMostrar = peliculasFiltradas.length > 0 ? peliculasFiltradas : peliculasDefecto ;
-
-
+      
     return (
         <div className='styleBD'>
             <div className="searchDesign" >
@@ -88,7 +87,7 @@ const MovieDB = () => {
 
                 {
                     peliculasMostrar.map((pelicula) => {
-
+                        
                         return (
                             <div className='cardMovie' key={pelicula.id} >
                                 <div className={isHovering? "movieDescriptionShow": "movieDescriptionHide"} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={() => peliculaSeleccionada()}>{pelicula.name}</div>
