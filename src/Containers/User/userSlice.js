@@ -37,9 +37,6 @@ export const userSlice = createSlice({
 //Exporto loginUser (necesito que me la expliquen)
 export const loginUser = (body) => async (dispatch) => {
 
-
-   
-
     try {
         //Utilizo axios
         const user = await axios.post("https://buscadordepeliculas.herokuapp.com/api/auth/login", body)

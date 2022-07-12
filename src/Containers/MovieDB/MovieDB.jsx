@@ -3,13 +3,14 @@ import axios from 'axios';
 import './MovieDB.scss';
 import { userData } from '../../Containers/User/userSlice';
 import { useSelector, useDispatch, } from 'react-redux';
-/*import{searchData} from '../../Containers/User/userSlice' */
+import {keepFilm} from '../MovieDetail/detailSlice'
 import { useNavigate } from 'react-router-dom';
 
 
 const MovieDB = () => {
-    /* 
-        let peliculas = useSelector(searchData); */
+     
+   
+
     const datosUsuario = useSelector(userData)
     let dispatch = useDispatch();
     let navegador = useNavigate();
@@ -31,8 +32,10 @@ const MovieDB = () => {
     }
 
     //Onclick navigate to Detail
-    const peliculaSeleccionada = () => {
-        navegador('/detail')
+    const peliculaSeleccionada = () => {   
+       
+       
+
     }
 
 
@@ -74,7 +77,7 @@ const MovieDB = () => {
             <div className='containerMovieDb'>
                 {
                     peliculasMostrar.map((pelicula) => {
-                        console.log(pelicula)
+                        // console.log(pelicula)
                         
                         return (
                             <div className='cardMovie' key={pelicula.name} onMouseOver={() => handleMouseOver(pelicula.name)} onMouseOut={() => handleMouseOut(-1)}>
@@ -86,15 +89,14 @@ const MovieDB = () => {
                                         <div className="containerDescriptionImg"><img src={pelicula.img} alt="" className='descriptionImg'/></div>
                                     </div>
                                 </div>
-                                
-                                <img className={isHovering == pelicula.name?  "imgCardMovieHide": "imgCardMovieShow"} src={pelicula.img} onMouseEnter={() => handleMouseOver(pelicula.name)} onMouseLeave={() => handleMouseOut(-1)} onClick={() => peliculaSeleccionada()}></img>
+
+                                <img className={isHovering == pelicula.name?  "imgCardMovieHide": "imgCardMovieShow"} src={pelicula.img} onMouseEnter={() => handleMouseOver(pelicula.name)} onMouseLeave={() => handleMouseOut(-1)} ></img>
                             </div>
                         )
                     })
                 }
             </div>
         </div>
-
     )
 };
 
