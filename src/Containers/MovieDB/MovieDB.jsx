@@ -7,6 +7,7 @@ import {keepFilm} from '../MovieDetail/detailSlice'
 import { useNavigate } from 'react-router-dom';
 
 
+
 const MovieDB = () => {
      
    
@@ -23,18 +24,20 @@ const MovieDB = () => {
 
     //On Mouse Over
     const handleMouseOver = (name) => {
-        setIsHovering(name)   
-        
+        setIsHovering(name)
+
     }
     //On Mouse Out
     const handleMouseOut = (i) => {
-       setIsHovering(i)
+        setIsHovering(i)
     }
 
     //Onclick navigate to Detail
-    const peliculaSeleccionada = () => {   
-       
-       
+    const peliculaSeleccionada = (pelicula) => {
+        dispatch(keepFilm(pelicula))
+        setTimeout(() => {
+            navegador('/detail')
+        }, 500)
 
     }
 
@@ -44,7 +47,7 @@ const MovieDB = () => {
     }, []);
 
     useEffect(() => {
-        if(datosUsuario.token === ""){
+        if (datosUsuario.token === "") {
             navegador('/')
         }
     });
@@ -63,9 +66,11 @@ const MovieDB = () => {
     const filtrar = (value) => {
         const pelisFiltradas = peliculasDefecto.filter((peli) => peli.name.includes(value));
         setPeliculasFiltradas(pelisFiltradas)
+
     }
 
-    const peliculasMostrar = peliculasFiltradas.length > 0 ? peliculasFiltradas : peliculasDefecto ;
+
+    const peliculasMostrar = peliculasFiltradas.length > 0 ? peliculasFiltradas : peliculasDefecto;
 
 
     return (
@@ -77,20 +82,18 @@ const MovieDB = () => {
             <div className='containerMovieDb'>
                 {
                     peliculasMostrar.map((pelicula) => {
-                        // console.log(pelicula)
-                        
                         return (
                             <div className='cardMovie' key={pelicula.name} onMouseOver={() => handleMouseOver(pelicula.name)} onMouseOut={() => handleMouseOut(-1)}>
-                                <div className={isHovering == pelicula.name? "movieDescriptionShow": "movieDescriptionHide"}  onClick={() => peliculaSeleccionada()}>
+                                <div className={isHovering === pelicula.name ? "movieDescriptionShow" : "movieDescriptionHide"} onClick={() => peliculaSeleccionada(pelicula)}>
                                     <div className="containerMovieDescription">
                                         <div className="containerTitle">Title: <br /> {pelicula.name}</div>
                                         <div className="containerGenre">Categoria: <br /> {pelicula.genre}</div>
                                         <div className="containerActors">Actores: <br /> {pelicula.actors}</div>
-                                        <div className="containerDescriptionImg"><img src={pelicula.img} alt="" className='descriptionImg'/></div>
+                                        <div className="containerDescriptionImg"><img src={pelicula.img} alt="" className='descriptionImg' /></div>
                                     </div>
                                 </div>
 
-                                <img className={isHovering == pelicula.name?  "imgCardMovieHide": "imgCardMovieShow"} src={pelicula.img} onMouseEnter={() => handleMouseOver(pelicula.name)} onMouseLeave={() => handleMouseOut(-1)} ></img>
+                                <img className={isHovering === pelicula.name ? "imgCardMovieHide" : "imgCardMovieShow"} src={pelicula.img} onMouseEnter={() => handleMouseOver(pelicula.name)} onMouseLeave={() => handleMouseOut(-1)} alt={pelicula.name}></img>
                             </div>
                         )
                     })
