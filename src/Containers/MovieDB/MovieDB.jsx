@@ -84,12 +84,9 @@ const MovieDB = () => {
                                         <div className="containerGenre">Categoria: <br /> {pelicula.genre}</div>
                                         <div className="containerActors">Actores: <br /> {pelicula.actors}</div>
                                         <div className="containerDescriptionImg"><img src={pelicula.img} alt="" className='descriptionImg'/></div>
-
                                     </div>
-                                    
-                                
-                                
                                 </div>
+                                
                                 <img className={isHovering == pelicula.name?  "imgCardMovieHide": "imgCardMovieShow"} src={pelicula.img} onMouseEnter={() => handleMouseOver(pelicula.name)} onMouseLeave={() => handleMouseOut(-1)} onClick={() => peliculaSeleccionada()}></img>
                             </div>
                         )
