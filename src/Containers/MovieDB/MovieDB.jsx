@@ -75,9 +75,9 @@ const MovieDB = () => {
 
     return (
         <div className='styleBD'>
-            <div className="searchDesign" >
+            
                 <input type="text" placeholder='Buscar...' id="buscador" onChange={(event) => filtrar(event.target.value)} />
-            </div>
+            
 
             <div className='containerMovieDb'>
                 {
@@ -86,7 +86,7 @@ const MovieDB = () => {
                             <div className='cardMovie' key={pelicula.name} onMouseOver={() => handleMouseOver(pelicula.name)} onMouseOut={() => handleMouseOut(-1)}>
                                 <div className={isHovering === pelicula.name ? "movieDescriptionShow" : "movieDescriptionHide"} onClick={() => peliculaSeleccionada(pelicula)}>
                                     <div className="containerMovieDescription">
-                                        <div className="containerTitle">Title: <br /> {pelicula.name}</div>
+                                        <div className="containerTitle">Titulo: <br /> {pelicula.name}</div>
                                         <div className="containerGenre">Categoria: <br /> {pelicula.genre}</div>
                                         <div className="containerActors">Actores: <br /> {pelicula.actors}</div>
                                         <div className="containerDescriptionImg"><img src={pelicula.img} alt="" className='descriptionImg' /></div>

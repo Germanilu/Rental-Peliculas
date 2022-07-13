@@ -7,15 +7,27 @@
     width: 100%;
     min-height: 82.1vh;
     padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+
 } 
 .searchDesign{
     margin-left: 1em;
     padding-top: 1em;
+    border: 1px solid white;
+}
+
+#buscador{
+    width: 10em;
+    border-radius: 0.5em;
+    text-align: center;
+    margin-left: 1em;
+    margin-top: 1em;
 }
 .containerMovieDb{
-    width: 90%;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(4,auto);
+    grid-template-columns: repeat(5,auto);
     grid-template-rows: repeat(auto,auto);
     gap: 1em;
     margin-top: 1em;
@@ -25,7 +37,7 @@
 .cardMovie{
     
     height: 25em;
-    width: 18em;
+    width: 16em;
 }
 
 .imgCardMovieShow{
@@ -53,7 +65,7 @@
 .movieDescriptionShow{
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.486);
+    background-color: rgba(0, 0, 0, 0.603);
     border: 1px solid rgb(255, 255, 255);
     display: flex;
     align-items: center;

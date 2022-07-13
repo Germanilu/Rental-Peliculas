@@ -18,7 +18,7 @@ export const detailSlice = createSlice({
 export const keepFilm = (pelicula) => async (dispatch) => {
     
     dispatch(dataFilm(pelicula));
-    console.log("estoy en redux",pelicula)  
+    
 };
 
 
