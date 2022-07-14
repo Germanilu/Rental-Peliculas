@@ -1,25 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Admin.scss'
 import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux/es/exports';
-import {userData} from '../userSlice'
-import { useState } from 'react';
- 
+import { userData } from '../userSlice'
+import { useNavigate } from 'react-router-dom';
+
 const Admin = () => {
 
     const datosUsuario = useSelector(userData)
+    let navegador = useNavigate()
+    const [cambiarPantalla, setCambiarPantalla] = useState([])
 
-   const [cambiarPantalla, setCambiarPantalla] = useState([])
 
+
+
+    useEffect(() => {
+
+
+    }, []);
+
+    useEffect(() => {
+        if (datosUsuario.token === "") {
+            navegador('/')
+        }
+    });
 
     const buscarUsuarios = async () => {
-        
+
         //Creo un objeto ocnfig donde metola Auth del token
         let config = {
-            headers: {Authorization: `Bearer ${datosUsuario.token}`}
+            headers: { Authorization: `Bearer ${datosUsuario.token}` }
         }
         //Llamada axios con auth
-        let resultado = await axios.get("https://buscadordepeliculas.herokuapp.com/api/users/",config)
+        let resultado = await axios.get("https://buscadordepeliculas.herokuapp.com/api/users/", config)
         setCambiarPantalla(resultado.data.data)
         console.log(resultado)
     }
@@ -27,10 +40,10 @@ const Admin = () => {
 
     const buscarOrdenes = async () => {
         let config = {
-            headers: {Authorization: `Bearer ${datosUsuario.token}`}
+            headers: { Authorization: `Bearer ${datosUsuario.token}` }
         }
 
-        let resultado = await axios.get("https://buscadordepeliculas.herokuapp.com/api/orders",config)
+        let resultado = await axios.get("https://buscadordepeliculas.herokuapp.com/api/orders", config)
 
         console.log(resultado.data.data)
         setCambiarPantalla(resultado.data.data)
@@ -38,24 +51,24 @@ const Admin = () => {
     }
 
 
-//    console.log("Soy cambiarpantalla",cambiarPantalla[0].movieName)
+    //    console.log("Soy cambiarpantalla",cambiarPantalla[0].movieName)
 
-     return (
-         <div className='adminDesign'>
+    return (
+        <div className='adminDesign'>
             <div className="adminPanel">
 
                 <div className='adminRow'>
-                <p>Buscar todos los usuarios</p>
-                <button onClick={() => buscarUsuarios()}>Buscar</button>
+                    <p>Buscar todos los usuarios</p>
+                    <button onClick={() => buscarUsuarios()}>Buscar</button>
                 </div>
                 <div className='adminRow'>
-                <p>Buscar todas las ordenes</p>
-                <button onClick={() => buscarOrdenes()}>Buscar</button>
+                    <p>Buscar todas las ordenes</p>
+                    <button onClick={() => buscarOrdenes()}>Buscar</button>
                 </div>
                 <div className='adminRow'>
-                <p>Buscar ordenes por usuario</p>
-                <input type="text" />
-                <button>Buscar</button>
+                    <p>Buscar ordenes por usuario</p>
+                    <input type="text" />
+                    <button>Buscar</button>
                 </div>
 
             </div>
@@ -63,38 +76,38 @@ const Admin = () => {
             <div className="adminResult">
 
                 {cambiarPantalla.map(id => {
-                    console.log("Soy ID",id)
+                    console.log("Soy ID", id)
                     // console.log("Soy cambiarpantalla", cambiarPantalla)
-                   if( id.returnDate !== undefined ){
-                    
-                    return(
-                        
-                        <div className='singContainerAdminResult'>
-                          <strong> Order ID: </strong> {id._id} <br />
-                          <strong> User ID:</strong> {id.userId} <br />
-                          <strong> Movie Name:</strong>  {id.movieName} <br />
-                          <strong>Order Date:</strong>   {id.orderDate} <br />
-                          <strong>Return Date:</strong>  {id.returnDate} <br />                            
-                        </div>
-                    )
-                   }else{
-                    return(
-                        
-                        <div className='singContainerAdminResult'>
-                          <strong> ID:</strong>  {id._id} <br />
-                          <strong> Email:</strong> {id.email} <br />
-                          <strong>   Name:</strong>  {id.name} <br />
-                          <strong> Created:</strong> {id.createdAt} <br />                            
-                        </div>
-                    )
-                   }
-                    
-                    
+                    if (id.returnDate !== undefined) {
+
+                        return (
+
+                            <div className='singContainerAdminResult'>
+                                <strong> Order ID: </strong> {id._id} <br />
+                                <strong> User ID:</strong> {id.userId} <br />
+                                <strong> Movie Name:</strong>  {id.movieName} <br />
+                                <strong>Order Date:</strong>   {id.orderDate} <br />
+                                <strong>Return Date:</strong>  {id.returnDate} <br />
+                            </div>
+                        )
+                    } else {
+                        return (
+
+                            <div className='singContainerAdminResult'>
+                                <strong> ID:</strong>  {id._id} <br />
+                                <strong> Email:</strong> {id.email} <br />
+                                <strong>   Name:</strong>  {id.name} <br />
+                                <strong> Created:</strong> {id.createdAt} <br />
+                            </div>
+                        )
+                    }
+
+
                 })}
-                
+
             </div>
 
-         </div>
-     )
+        </div>
+    )
 }
 export default Admin;
