@@ -10,6 +10,7 @@ const Detail = () => {
 
     let credenciales = useSelector(userData)
     let detallesPelicula = useSelector(takeData);
+    let navegador = useNavigate()
     
 
     //Hooks
@@ -22,10 +23,11 @@ const Detail = () => {
         
     },[]);
 
-
     useEffect(() => {
-
-    })
+      if (credenciales.token === "") {
+          navegador('/')
+      }
+  });
 
 
     //Alquilar Pelicula

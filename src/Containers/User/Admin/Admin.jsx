@@ -63,7 +63,10 @@ const Admin = () => {
             <div className="adminResult">
 
                 {cambiarPantalla.map(id => {
-                   if( cambiarPantalla[0].movieName !== undefined ){
+                    console.log("Soy ID",id)
+                    // console.log("Soy cambiarpantalla", cambiarPantalla)
+                   if( id.returnDate !== undefined ){
+                    
                     return(
                         
                         <div className='singContainerAdminResult'>

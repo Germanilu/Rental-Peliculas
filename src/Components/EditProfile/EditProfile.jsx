@@ -60,11 +60,7 @@ const EditProfile = () => {
             <div className="buttonEditProfile" onClick={()=>dispatch(updateUser(datosUsuario,perfilUsuario),navigate('/'))}>Guardar</div>
             <div className="buttonEditProfile" onClick={() => navigate('/')}>Cerrar</div>
             </div>
-
             </div>
-
-            
-
         </div>
 
     )
