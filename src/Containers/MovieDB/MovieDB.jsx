@@ -17,7 +17,7 @@ const MovieDB = () => {
     let navegador = useNavigate();
     //hook de películas
     const [peliculasDefecto, setPeliculasDefecto] = useState([]);
-    const [peliculasFiltradas, setPeliculasFiltradas] = useState([]);
+    const [peliculasFiltradas, setPeliculasFiltradas] = useState(null);
     //Hook Hover on movie card
     const [isHovering, setIsHovering] = useState(-1)
 
@@ -69,7 +69,7 @@ const MovieDB = () => {
     }
 
 
-    const peliculasMostrar = peliculasFiltradas.length > 0 ? peliculasFiltradas : peliculasDefecto;
+    const peliculasMostrar =  peliculasFiltradas !== null  ? peliculasFiltradas : peliculasDefecto;
 
 
     return (
