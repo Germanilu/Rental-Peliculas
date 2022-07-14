@@ -11,9 +11,7 @@ const Admin = () => {
     let navegador = useNavigate()
     const [cambiarPantalla, setCambiarPantalla] = useState([])
 
-
-
-
+    
     useEffect(() => {
 
 
