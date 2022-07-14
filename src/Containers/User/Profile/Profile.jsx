@@ -37,7 +37,11 @@ const Profile = () => {
                     <div className="containerAge"><b>Edad:</b>  {datosUsuario.user_age}</div>
                     
                 </div>
+                <div className="containerButtons">
+
                 <div className="button" onClick={() => navigate('/edit-profile')}>Modificar</div>  
+                <div className="button" onClick={() => navigate('/orders')}>Ver mis pedidos</div>  
+                </div>
                 
             </div>
          </div>
