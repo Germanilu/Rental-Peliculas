@@ -1,8 +1,25 @@
+
 .editProfileDesign{
+    height: 35.1em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    
+}
+
+.titleEditProfile{
+    letter-spacing: 0.3em;
+}
+
+
+.editProfileDesignContainer{
     margin-top: 2em;
     height: 25em;
-    width: 100%;
-    border: 1px solid black;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +27,25 @@
     gap: 1em;
     animation: prova 1.5s forwards 0.2s;
     opacity: -1;
-  
+    background-color: var(--pricol3);
+
+}
+
+
+.buttonContainer{
+    display: flex;
+    gap: 1em;
+    
+}
+.buttonEditProfile{
+    width: 5em;
+    margin-top: 1em;
+    border: 2px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 0.5em;
+    border-radius: 1em;
+    cursor: pointer;
 }
 
 @keyframes prova {

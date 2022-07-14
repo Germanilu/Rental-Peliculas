@@ -26,9 +26,6 @@ const Profile = () => {
     })
 
 
-
-
-
     return (
          <div className='profileDesign'>
             <div className="profileContainer">

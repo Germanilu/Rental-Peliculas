@@ -47,6 +47,8 @@ const EditProfile = () => {
     return (
 
         <div className='editProfileDesign'>
+            <div className="editProfileDesignContainer">
+                <h3 className='titleEditProfile'>Mis Datos personales</h3>
             <input className='input' value={perfilUsuario.user_name} type='text' name='user_name' title='name' disabled onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_surname} type='text' name='user_surname' title='surname' disabled onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_email} type='text' name='user_email' title='email' onChange={handlerInputs} lenght='30' />
@@ -54,8 +56,12 @@ const EditProfile = () => {
             <input className='input' value={perfilUsuario.user_city} type='text' name='user_city' title='city' onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_mobile} type='text' name='user_mobile' title='mobile' onChange={handlerInputs} lenght='30' />
 
-            <div className="button" onClick={()=>dispatch(updateUser(datosUsuario,perfilUsuario),navigate('/'))}>Guardar</div>
-            <div className="button" onClick={() => navigate('/')}>Cerrar</div>
+            <div className="buttonContainer">
+            <div className="buttonEditProfile" onClick={()=>dispatch(updateUser(datosUsuario,perfilUsuario),navigate('/'))}>Guardar</div>
+            <div className="buttonEditProfile" onClick={() => navigate('/')}>Cerrar</div>
+            </div>
+
+            </div>
 
             
 
