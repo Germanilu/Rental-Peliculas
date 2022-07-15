@@ -73,7 +73,8 @@ export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) =>{
             email: perfilUsuario.user_email,
             address: perfilUsuario.user_address,
             city: perfilUsuario.user_city,
-            mobile: perfilUsuario.user_mobile
+            mobile: perfilUsuario.user_mobile,
+            password: perfilUsuario.user_password
             
         }
         console.log(body)
@@ -86,10 +87,9 @@ export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) =>{
         console.log(resultado)
 
         if(resultado.status === 200) {
-            //Si el usuario cambia email le fuerzo un logout
-           if(datosUsuario.user_email !== body.email){
+            //Si el usuario cambia email o password le fuerzo un logout
+           if(datosUsuario.user_email !== body.email || datosUsuario.user_password !== body.password){
             console.log("datosusuario",datosUsuario.user_email)
-            console.log("body",body.email)
             dispatch(logout())
            }else{
             dispatch(update({perfilUsuario}));

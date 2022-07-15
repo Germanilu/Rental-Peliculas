@@ -7,10 +7,7 @@ import {keepFilm} from '../MovieDetail/detailSlice'
 import { useNavigate } from 'react-router-dom';
 
 
-
 const MovieDB = () => {
-     
-   
 
     const datosUsuario = useSelector(userData)
     let dispatch = useDispatch();
@@ -21,11 +18,9 @@ const MovieDB = () => {
     //Hook Hover on movie card
     const [isHovering, setIsHovering] = useState(-1)
 
-
     //On Mouse Over
     const handleMouseOver = (name) => {
         setIsHovering(name)
-
     }
     //On Mouse Out
     const handleMouseOut = (i) => {
@@ -38,9 +33,7 @@ const MovieDB = () => {
         setTimeout(() => {
             navegador('/detail')
         }, 500)
-
     }
-
 
     useEffect(() => {
         peliculasDB();
@@ -53,7 +46,6 @@ const MovieDB = () => {
     });
 
     const peliculasDB = async () => {
-
         try {
             let peliculas = await axios.get('https://buscadordepeliculas.herokuapp.com/api/movie/all');
             setPeliculasDefecto(peliculas.data.data);
@@ -73,13 +65,11 @@ const MovieDB = () => {
 
     const peliculasMostrar =  peliculasFiltradas !== null  ? peliculasFiltradas : peliculasDefecto;
 
-
     return (
         <div className='styleBD'>
             
                 <input type="text" placeholder='Buscar...' id="buscador" onChange={(event) => filtrar(event.target.value)} />
             
-
             <div className='containerMovieDb'>
                 {
                     peliculasMostrar.map((pelicula) => {

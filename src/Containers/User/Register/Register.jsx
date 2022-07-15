@@ -12,7 +12,6 @@ const Register = (props) =>{
     const [userDades, setUserDades] = useState({
         name:'',
         surname:'',
-        age:'',
         email:'',
         mobile:'',
         city:'',
@@ -44,11 +43,13 @@ const Register = (props) =>{
         
         })
 
+    
+
     const Registrate = async () => {
         
         //Primero, comprobación de campos vacíos
 
-        let datos = ['name','surname','age','email','mobile',' address','password', 'password2'];
+        let datos = ['name','surname','email','mobile',' address','password', 'password2'];
         
         for(let field of datos){
             if(userDades[field] === ''){
@@ -89,6 +90,8 @@ const Register = (props) =>{
                 setMsgError("falta un caracter especial en la password ejemplo [ *@!#%&()^~{} ]");
                 return;
             }
+
+          
           
        
         //[TOCANDO LA PASSWORD VALIDATER]
@@ -125,10 +128,13 @@ const Register = (props) =>{
                 <div className="registerDesigR">
                     <input className='bottonDesign' placeholder='name' type='text' name='name' title='name' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='surname' type='text' name='surname' title='surname' onChange={updateUserDades}/>
-                    <input className='bottonDesign' placeholder='age' type='text' name='age' title='age' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='email' type='email' name='email' title='email' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='city' type='text' name='city' title='city' onChange={updateUserDades}/>
                 </div>
+
+
+
+
                 <div className="registerDesigR">
                     <input className='bottonDesign' placeholder='mobile' type='text' name='mobile' title='mobile' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='address' type='text' name='address' title='address' onChange={updateUserDades}/>
