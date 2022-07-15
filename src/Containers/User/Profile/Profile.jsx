@@ -33,9 +33,7 @@ const Profile = () => {
                 <div className="containerName"><b>Nombre:</b> {datosUsuario.user_name} {datosUsuario.user_surname}</div>
                     <div className="containerEmail"><b>Email:</b> {datosUsuario.user_email}</div>
                     <div className="containerStreet"><b>Dirección:</b> {datosUsuario.user_address} {datosUsuario.user_city}</div>
-                    <div className="containerMobile"><b>Telefono:</b> {datosUsuario.user_mobile}</div>
-                    <div className="containerAge"><b>Edad:</b>  {datosUsuario.user_age}</div>
-                    
+                    <div className="containerMobile"><b>Telefono:</b> {datosUsuario.user_mobile}</div>                    
                 </div>
                 <div className="containerButtons">
 
