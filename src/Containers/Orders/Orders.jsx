@@ -63,9 +63,8 @@ const Orders = () => {
                     
                 )
             })
-
-            
          }
+         
          {/* Si el usuario no tiene ninguna pelicula alquilada */}
          <div className='noMovieRent'>{msgError}</div>
          

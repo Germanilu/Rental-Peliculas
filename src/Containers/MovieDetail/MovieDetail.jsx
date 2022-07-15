@@ -44,7 +44,7 @@ const Detail = () => {
         console.log("Estoy aqui",resultado.data.data.movieName)
         console.log(resultado)
       } catch (error) {
-        setMsgError(`${error.response.data.message}, es: ${error.response.data.data}`)
+        setMsgError(`${error.response.data.message}`)
         console.log(error.response.data.data)
       }
     }
@@ -53,8 +53,8 @@ const Detail = () => {
     return (
       <div className="containerMovieDetail">
         <div className="containerImg"><img src={detallesPelicula.img} alt={detallesPelicula.name}  className="movieDetailImg"/></div>
-        <div className="containerDescription">
 
+        <div className="containerDescription">
           <div className="containerDescriptionTitle">Titulo: {detallesPelicula.name}</div>
           <div className="containerDescriptionGenre">Genero: {detallesPelicula.genre}</div>
           <div className="containerDescriptionDirector">Director: {detallesPelicula.director}</div>
