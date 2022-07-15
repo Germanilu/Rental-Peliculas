@@ -19,7 +19,7 @@ const Profile = () => {
     },[])
 
     useEffect(() => {
-        console.log("me actualize",datosUsuario)
+        
         if(datosUsuario.token === ""){
             navigate("/");
         }

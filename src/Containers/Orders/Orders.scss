@@ -1,0 +1,36 @@
+.designOrders{
+    height: 80vh;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.designOrderDetail{
+    height: 90%;
+    width: 90%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.designImg{
+    height: 90%;
+    width: 40%;
+    border: 1px solid black;
+}
+
+.designInfoOrders{
+    height: 90%;
+    width: 40%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.orderButton{
+    border: 1px solid black;
+}

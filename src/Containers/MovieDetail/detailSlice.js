@@ -25,7 +25,6 @@ export const keepFilm = (pelicula) => async (dispatch) => {
 //Exporto las funciones que en si realizan la accion
 export const { dataFilm } = detailSlice.actions;
 
-
 export const takeData = (state) => state.dataFilm;
 
 export default detailSlice.reducer;
