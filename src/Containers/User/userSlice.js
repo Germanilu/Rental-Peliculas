@@ -73,7 +73,8 @@ export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) =>{
             email: perfilUsuario.user_email,
             address: perfilUsuario.user_address,
             city: perfilUsuario.user_city,
-            mobile: perfilUsuario.user_mobile
+            mobile: perfilUsuario.user_mobile,
+            password: perfilUsuario.user_password
             
         }
         console.log(body)
