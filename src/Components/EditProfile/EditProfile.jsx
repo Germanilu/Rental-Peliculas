@@ -24,6 +24,9 @@ const EditProfile = () => {
         user_password: datosUsuario.user_password
     })
 
+    const [msgError, setMsgError] = useState("")
+
+
     
 
     const handlerInputs = (e) => {
@@ -31,6 +34,15 @@ const EditProfile = () => {
         setPerfilUsuario({...perfilUsuario, [e.target.name]: e.target.value})
         console.log("Soy el perfilUsuario",perfilUsuario)
         console.log("soy datosUsuario", datosUsuario)
+    }
+
+    const editDetails = () => {
+        if(perfilUsuario.user_password == undefined){
+            setMsgError("Tienes que introducir la contraseña")
+        }else{
+            dispatch(updateUser(datosUsuario,perfilUsuario),
+        navigate('/'))
+        } 
     }
 
 
@@ -57,9 +69,9 @@ const EditProfile = () => {
             <input className='input' value={perfilUsuario.user_city} type='text' name='user_city' title='city' onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_mobile} type='text' name='user_mobile' title='mobile' onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_password} type='password' name='user_password' title='password' onChange={handlerInputs} lenght='30' />
-
+            <div>{msgError}</div>
             <div className="buttonContainer">
-            <div className="buttonEditProfile" onClick={()=>dispatch(updateUser(datosUsuario,perfilUsuario),navigate('/'))}>Guardar</div>
+            <div className="buttonEditProfile" onClick={()=>editDetails() }>Guardar</div>
             <div className="buttonEditProfile" onClick={() => navigate('/')}>Cerrar</div>
             </div>
             </div>
