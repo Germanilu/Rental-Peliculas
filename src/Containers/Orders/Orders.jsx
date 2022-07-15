@@ -13,6 +13,7 @@ const Orders = () => {
 
 
     //Hooks
+    const [showOrder, setShowOrder] = useState([])
     const [msgError, setMsgError] = useState([])
 
     
@@ -34,11 +35,10 @@ const Orders = () => {
             };
 
            let resultado = await axios.get(`https://buscadordepeliculas.herokuapp.com/api/order/user=${credenciales.user_id}`,config)
-           setMsgError([resultado.data.data])
+           setShowOrder([resultado.data.data])
     
-           console.log("soy x" + msgError)
         } catch (error) {
-            setMsgError(error.message)
+            setMsgError("De momento no tienes ninguna pelicula alquilada")
             console.log("soy el catch",error)
         }
     }
@@ -47,8 +47,8 @@ const Orders = () => {
      return (
          <div className='designOrders'>
             
-         {
-            msgError.map((data) => {
+         { showOrder &&
+            showOrder.map((data) => {
                 console.log(data)
                 return(
                     <div className="designOrderDetail">
@@ -56,14 +56,17 @@ const Orders = () => {
                         <div className="designInfoOrders">
                             <div className="orderName">{data.movieName}</div>
                             <div className="orderDate">{data.orderDate}</div>
-                            <div className="orderReturn">{data.returnDate}</div>
+                            <div className="orderReturn">Fecha limite de devolución: {data.returnDate}</div>
                             <div className="orderButton">Devolver Pelicula</div>
                         </div>
                     </div>
                     
                 )
             })
+
+            
          }
+         <div className='noMovieRent'>{msgError}</div>
          
          </div>
 
