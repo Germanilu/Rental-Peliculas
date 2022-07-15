@@ -44,6 +44,8 @@ const Register = (props) =>{
         
         })
 
+      
+
     const Registrate = async () => {
         
         //Primero, comprobación de campos vacíos
@@ -89,6 +91,8 @@ const Register = (props) =>{
                 setMsgError("falta un caracter especial en la password ejemplo [ *@!#%&()^~{} ]");
                 return;
             }
+
+          
           
        
         //[TOCANDO LA PASSWORD VALIDATER]
@@ -128,7 +132,12 @@ const Register = (props) =>{
                     <input className='bottonDesign' placeholder='age' type='text' name='age' title='age' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='email' type='email' name='email' title='email' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='city' type='text' name='city' title='city' onChange={updateUserDades}/>
+                    
                 </div>
+
+
+
+
                 <div className="registerDesigR">
                     <input className='bottonDesign' placeholder='mobile' type='text' name='mobile' title='mobile' onChange={updateUserDades}/>
                     <input className='bottonDesign' placeholder='address' type='text' name='address' title='address' onChange={updateUserDades}/>
