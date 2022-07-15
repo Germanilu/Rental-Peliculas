@@ -52,7 +52,7 @@ const Orders = () => {
                 console.log(data)
                 return(
                     <div className="designOrderDetail">
-                        <div className="designImg">imagen aqui</div>
+                        <div className="designImg"><img className='designOrderImg' src={data.movieImg} alt={data.movieName} /></div>
                         <div className="designInfoOrders">
                             <div className="orderName">{data.movieName}</div>
                             <div className="orderDate">{data.orderDate}</div>
@@ -66,6 +66,7 @@ const Orders = () => {
 
             
          }
+         {/* Si el usuario no tiene ninguna pelicula alquilada */}
          <div className='noMovieRent'>{msgError}</div>
          
          </div>
