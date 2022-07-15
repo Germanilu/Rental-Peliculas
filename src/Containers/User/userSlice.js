@@ -88,7 +88,7 @@ export const updateUser = (datosUsuario,perfilUsuario) => async (dispatch) =>{
 
         if(resultado.status === 200) {
             //Si el usuario cambia email le fuerzo un logout
-           if(datosUsuario.user_email !== body.email){
+           if(datosUsuario.user_email !== body.email || datosUsuario.user_password !== body.password){
             console.log("datosusuario",datosUsuario.user_email)
             console.log("body",body.email)
             dispatch(logout())

@@ -9,6 +9,7 @@ const EditProfile = () => {
     const datosUsuario = useSelector(userData)
     const dispatch = useDispatch()
     const navigate = useNavigate();
+    
  
 
     //Hooks
@@ -21,8 +22,13 @@ const EditProfile = () => {
         user_city: datosUsuario.user_city,
         user_mobile: datosUsuario.user_mobile,
         user_token: datosUsuario.user_token,
-        user_password: datosUsuario.user_password
+        user_password: datosUsuario.user_password,  
+        user_password: ""
+         
     })
+
+
+    
 
     const [msgError, setMsgError] = useState("")
 
@@ -37,8 +43,10 @@ const EditProfile = () => {
     }
 
     const editDetails = () => {
-        if(perfilUsuario.user_password == undefined){
+        if(perfilUsuario.user_password == "" ){
             setMsgError("Tienes que introducir la contraseña")
+        }else if(perfilUsuario.user_password !== perfilUsuario.user_password2){
+            setMsgError("Los dos password no coinciden")
         }else{
             dispatch(updateUser(datosUsuario,perfilUsuario),
         navigate('/'))
@@ -69,6 +77,8 @@ const EditProfile = () => {
             <input className='input' value={perfilUsuario.user_city} type='text' name='user_city' title='city' onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_mobile} type='text' name='user_mobile' title='mobile' onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_password} type='password' name='user_password' title='password' onChange={handlerInputs} lenght='30' />
+            <input className='input' value={perfilUsuario.user_password2} type='password' name='user_password2' title='password2' onChange={handlerInputs}/>
+            
             <div>{msgError}</div>
             <div className="buttonContainer">
             <div className="buttonEditProfile" onClick={()=>editDetails() }>Guardar</div>
