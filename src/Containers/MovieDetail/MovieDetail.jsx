@@ -52,7 +52,7 @@ const Detail = () => {
     
     return (
       <div className="containerMovieDetail">
-        <div className="containerImg"><img src={detallesPelicula.img} alt={detallesPelicula.name}  className="movieDetailImg"/></div>
+       
 
         <div className="containerDescription">
           <div className="containerDescriptionTitle">Titulo: {detallesPelicula.name}</div>
@@ -62,8 +62,9 @@ const Detail = () => {
           <div className="containerDescriptionDescription">{detallesPelicula.description}</div>
           <div className="containerDescriptionButton" onClick={() => alquilar()}>Alquilar</div>
           <div className='msgError'>{msgError}</div>
+          
         </div>
-
+<div className="containerImg"><img src={detallesPelicula.img} alt={detallesPelicula.name}  className="movieDetailImg"/></div>
       </div>
          
      )

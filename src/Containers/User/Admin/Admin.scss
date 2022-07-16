@@ -1,3 +1,5 @@
+@import '../../../App.scss';
+
 .adminDesign{
     display: flex;
     align-items: center;
@@ -10,17 +12,13 @@
     width: 50%;
     height: 20em;
     border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex();
     flex-wrap: wrap;
     flex-direction: column;
 }
 
 .adminRow{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex();
 }
 
 .adminResult{
@@ -28,7 +26,6 @@
     min-height: 10em;
     width: 90%;
     display: grid;
-    
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(auto-fill, auto);
     gap: 0.5em;

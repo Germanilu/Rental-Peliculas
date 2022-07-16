@@ -131,31 +131,30 @@ const Register = (props) => {
                     </div>
                     <div className='divInputs'>
                         <div className="registerLeft">
-                            <input className='bottonDesign' placeholder='name' type='text' name='name' title='name' onChange={updateUserDades} />
-                            <input className='bottonDesign' placeholder='surname' type='text' name='surname' title='surname' onChange={updateUserDades} />
-                            <input className='bottonDesign' placeholder='email' type='email' name='email' title='email' onChange={updateUserDades} />
-                            <input className='bottonDesign' placeholder='city' type='text' name='city' title='city' onChange={updateUserDades} />
+                            <input className='bottonDesign' placeholder='Nombre' type='text' name='name' title='name' onChange={updateUserDades} />
+                            <input className='bottonDesign' placeholder='Apellido' type='text' name='surname' title='surname' onChange={updateUserDades} />
+                            <input className='bottonDesign' placeholder='Email' type='email' name='email' title='email' onChange={updateUserDades} />
+                            <input className='bottonDesign' placeholder='Telefono' type='text' name='mobile' title='mobile' onChange={updateUserDades} />
                         </div>
                         <div className="registerRight">
-                            <input className='bottonDesign' placeholder='mobile' type='text' name='mobile' title='mobile' onChange={updateUserDades} />
-                            <input className='bottonDesign' placeholder='address' type='text' name='address' title='address' onChange={updateUserDades} />
-                            <input className='bottonDesign' placeholder='password' type='password' name='password' title='password' onChange={updateUserDades} />
-                            <input className="bottonDesign" placeholder='password2' type='password' name='password2' title='password2' onChange={updateUserDades} />
-                            
-                        </div>
+                            <input className='bottonDesign' placeholder='Ciudad' type='text' name='city' title='city' onChange={updateUserDades} />
+                            <input className='bottonDesign' placeholder='Dirección' type='text' name='address' title='address' onChange={updateUserDades} />
+                            <input className='bottonDesign' placeholder='Password' type='password' name='password' title='password' onChange={updateUserDades} />
+                            <input className="bottonDesign" placeholder='Password2' type='password' name='password2' title='password2' onChange={updateUserDades} />
 
+                        </div>
+                       
                     </div>
                     <div className="designMessageError">
-                                {msgError}
-                            </div>
+                            {msgError}
+                        </div>
                     <div className='divBotton'>
                         <div className="bottonDesignRegister" onClick={() => Registrate()}>
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
-                            REGISTRATE
-                        </div>
+                            REGISTRATE</div>
                     </div>
 
                 </div>

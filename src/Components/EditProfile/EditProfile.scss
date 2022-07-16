@@ -1,6 +1,5 @@
 @import '../../App.scss';
 
-
 .editProfileDesign{
     height: 37em;
     width: 100%;
@@ -8,9 +7,7 @@
     align-items: center;
     justify-content: center;
     background-image: url(../../img/cinema4.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; 
+    @include bgImg()
 }
 
 .titleEditProfile{
@@ -30,28 +27,24 @@
     font-weight: 700;
 }
 
-
 .editProfileDesignContainer{
     height: 30em;
     width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex();
     flex-direction: column;
     gap: 0.5em;
     animation: prova 1.5s forwards 0.2s;
     opacity: -1;
-    background-color: rgba(255, 255, 255, 0.904);
-    
+    background-color: rgba(255, 255, 255, 0.904); 
 }
 
 .buttonContainer{
     display: flex;
-    
 }
+
 .buttonEditProfile{
     @include button()
-  }
+}
   
 
 

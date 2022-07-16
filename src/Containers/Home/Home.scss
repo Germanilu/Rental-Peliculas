@@ -1,25 +1,18 @@
-
+@import '../../App.scss';
 
 .homeDesign{
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex();
     flex-direction: column;
     background-image: url(../../img/imgbg4.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    @include bgImg();
 }
 
 
 .containerMovie{
     height: 30em;
     width: 70%;
-    // border: 1px solid rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+    @include flex();
     gap: 1em;
 }
 
@@ -27,9 +20,7 @@
     border: 1px solid rgb(255, 255, 255);
     height: 100%;
     width: 20%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @include bgImg();
 }
 
 .img1{

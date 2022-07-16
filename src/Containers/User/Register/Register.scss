@@ -3,34 +3,23 @@
 
 .registerDesign {  
     background-image: url('../../../img/cinema1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    @include bgImg();
     height: 90vh;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    @include flex();    
 }
+
 .subRegisterDesign{
-    display: flex;
+    @include flex();
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 .divInputs{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex();
 }
 .divtitle{
     width: 90%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    @include flex();
 }
-
 
 
 .divtitle h3 {
@@ -39,45 +28,38 @@
 }
 .divBotton{
     width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex();
     
 }
 
-.registerLeft:hover, .registerRight:hover{
-   
-    opacity: 0.98;
-    cursor: pointer;
-    transition: 0.5s;
-
-}
 .registerLeft {
-
     height: 21em;
     width: 25em;
-    display: flex;
+    @include flex();
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     border-radius: 0.2em;
     opacity: 0.8;
     transition: 0.5s;
+    &:hover{
+      opacity: 0.98;
+    cursor: pointer;
+    transition: 0.5s;
+    }
 }
 
 .registerRight {
-
     height: 21em;
     width: 25em;
-    display: flex;
+    @include flex();
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     border-radius: 0.2em;
     opacity: 0.8;
     transition: 0.5s;
-    
-
+    &:hover{
+      opacity: 0.98;
+    cursor: pointer;
+    transition: 0.5s;
+    }
 }
  
  .bottonDesign {
@@ -88,15 +70,12 @@
     border-radius: 0.2em;
     background-color: var(--pricol3);
     margin: 0.9em;
-    
-
 } 
 
 .bottonDesignRegister {
     @include button()
   }
   
-
 
 .designMessageError{
     color: var(--pricol3);
