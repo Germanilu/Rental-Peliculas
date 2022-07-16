@@ -18,13 +18,13 @@
     height: 23em;
     width: 15em;
     color: black;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.815);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 1em;
-    background-color: rgba(0, 0, 0, 0.897);
+    background-color: rgba(0, 0, 0, 0.637);
 
 }
 
@@ -32,7 +32,7 @@
     height: 60%;
     width: 85%;
     padding-left: 0.5em;
-    // border: 1px solid black;
+    border: 2px solid rgb(3, 3, 3);
     background-color: rgba(255, 255, 255, 0.911);
     display: flex;
     flex-direction: column;
@@ -40,10 +40,24 @@
     gap: 1em;
     font-size: 15px;
     border-radius: 1em;
+    font-weight: 400;
+
+    &:hover{
+        border: 2px solid white;
+        background-color: rgb(255, 255, 255);
+    }
 }
 
+
+
 .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 5em;
+    height: 2em;
+    font-weight: 400;
+    font-size: 15px;
     margin-top: 1em;
     border: 2px solid rgb(255, 255, 255);
     color: white;
@@ -51,6 +65,12 @@
     padding: 0.5em;
     border-radius: 1em;
     cursor: pointer;
+
+    &:hover{
+        background-color: rgb(255, 255, 255);
+        color: black;
+        border: 2px solid black;
+    }
 }
 
 .containerButtons{

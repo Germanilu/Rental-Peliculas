@@ -37,8 +37,8 @@ const Profile = () => {
                 </div>
                 <div className="containerButtons">
 
-                <div className="button" onClick={() => navigate('/edit-profile')}>Modificar</div>  
-                <div className="button" onClick={() => navigate('/orders')}>Ver mis pedidos</div>  
+                <div className="button" onClick={() => navigate('/edit-profile')}>Modificar Perfil</div>  
+                <div className="button" onClick={() => navigate('/orders')}>Ver mi Pedido</div>  
                 </div>
                 
             </div>
