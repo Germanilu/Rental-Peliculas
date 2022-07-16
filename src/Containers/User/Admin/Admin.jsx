@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Admin.scss'
 import axios from 'axios'
-import { useSelector, useDispatch } from 'react-redux/es/exports';
+import { useSelector } from 'react-redux/es/exports';
 import { userData } from '../userSlice'
 import { useNavigate } from 'react-router-dom';
 
@@ -9,11 +9,14 @@ const Admin = () => {
 
     const datosUsuario = useSelector(userData)
     let navegador = useNavigate()
-    const [cambiarPantalla, setCambiarPantalla] = useState([])
-
     
-    useEffect(() => {
+    //Hooks
+    const [cambiarPantalla, setCambiarPantalla] = useState([])
+    const [valorInput, setValorInput] = useState()
+    const [msgError, setMsgError] = useState("")
 
+
+    useEffect(() => {
 
     }, []);
 
@@ -24,15 +27,13 @@ const Admin = () => {
     });
 
     const buscarUsuarios = async () => {
-
-        //Creo un objeto ocnfig donde metola Auth del token
         let config = {
             headers: { Authorization: `Bearer ${datosUsuario.token}` }
         }
-        //Llamada axios con auth
+        
         let resultado = await axios.get("https://buscadordepeliculas.herokuapp.com/api/users/", config)
         setCambiarPantalla(resultado.data.data)
-        console.log(resultado)
+        // console.log(resultado)
     }
 
 
@@ -43,13 +44,32 @@ const Admin = () => {
 
         let resultado = await axios.get("https://buscadordepeliculas.herokuapp.com/api/orders", config)
 
-        console.log(resultado.data.data)
+        // console.log(resultado.data.data)
         setCambiarPantalla(resultado.data.data)
-        console.log(resultado.lenght)
     }
 
+    const updateInput = e => setValorInput(e.target.value)
+    
 
-    //    console.log("Soy cambiarpantalla",cambiarPantalla[0].movieName)
+    const buscarOrdenesPorUsuario = async () => {
+       try {
+        // console.log("Soy valor input",valorInput)
+        let config = {
+            headers: { Authorization: `Bearer ${datosUsuario.token}` }
+        }  
+        // console.log("Soy config",config)
+        // console.log("soy valor input",valorInput)
+
+        let resultado = await axios.get(`https://buscadordepeliculas.herokuapp.com/api/orders/userOrder=${valorInput}`,config)
+
+        // console.log("Soy resultado",resultado.data.data)
+        setCambiarPantalla(resultado.data.data)
+
+       } catch (error) {
+        // console.log("soy error",error.response.data.message)
+        setMsgError(error.response.data.message)
+       }
+    }
 
     return (
         <div className='adminDesign'>
@@ -65,21 +85,17 @@ const Admin = () => {
                 </div>
                 <div className='adminRow'>
                     <p>Buscar ordenes por usuario</p>
-                    <input type="text" />
-                    <button>Buscar</button>
+                    <input type="text" onChange={updateInput}/>
+                    <button onClick={() => buscarOrdenesPorUsuario()}>Buscar</button>
                 </div>
-
             </div>
 
             <div className="adminResult">
-
                 {cambiarPantalla.map(id => {
-                    console.log("Soy ID", id)
-                    // console.log("Soy cambiarpantalla", cambiarPantalla)
+                    // console.log("Soy ID", id)
+                    
                     if (id.returnDate !== undefined) {
-
                         return (
-
                             <div className='singContainerAdminResult'>
                                 <strong> Order ID: </strong> {id._id} <br />
                                 <strong> User ID:</strong> {id.userId} <br />
@@ -99,13 +115,10 @@ const Admin = () => {
                             </div>
                         )
                     }
-
-
                 })}
-
             </div>
-
         </div>
     )
 }
+
 export default Admin;
