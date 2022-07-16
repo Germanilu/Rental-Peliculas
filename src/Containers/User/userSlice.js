@@ -53,7 +53,7 @@ export const loginUser = (body) => async (dispatch) => {
 
     } catch (error) {
         //Como retorno este error en un setMsgError?
-        console.log(error)
+        console.log(error.response.data.message)
     }
 }
 
