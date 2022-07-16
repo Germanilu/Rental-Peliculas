@@ -1,5 +1,6 @@
 .registerDesign {
-   background-image: url('../../../img/palomitas.jpg');
+    
+    background-image: url('../../../img/cinema1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -10,71 +11,97 @@
     align-items: center;
     justify-content: center;
 }
-
-.registerDesigR {
-
-    height: 21em;
-    width: 25em;
-    background-color: var(--pricol2);
+.subRegisterDesign{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 1em;
-    margin: 2em;
-    opacity: 0.7;
-    transition: 0.5s;
-    padding: 0.5em;
-    box-shadow: 10px 10px 16px 10px rgba(0,0,0,0.27);
+}
+.divInputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.divtitle{
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
-.registerDesigR:hover{
-    background-color: var(--pricol5);
+
+
+.divtitle h3 {
+     font-size: 1.4em;
+    color: white;
+}
+.divBotton{
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.registerLeft:hover, .registerRight:hover{
+   
     opacity: 0.98;
     cursor: pointer;
     transition: 0.5s;
 
 }
-
-/* .registerDesignRight {
+.registerLeft {
 
     height: 21em;
     width: 25em;
-    background-color: var(--pricol2);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 2em;
-    margin: 3em;
-    opacity: 0.9;
+    justify-content: center;
+    border-radius: 0.2em;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.registerRight {
+
+    height: 21em;
+    width: 25em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2em;
+    opacity: 0.8;
+    transition: 0.5s;
     
 
 }
- */
+ 
  .bottonDesign {
-    width: 90%;
-    height: 1.8em;
+    width: 80%;
+    height: 1.7em;
     font-size: 1.1em;
     border: none;
-    border-radius: 0.3em;
+    border-radius: 0.2em;
     background-color: var(--pricol3);
-    margin: 0.7em;
+    margin: 0.9em;
     
 
 } 
 
 .bottonDesignRegister {
 
-    height: 2.5em;
-    width: 90%;
+    height: 2.2em;
+    width: 80%;
     border-radius: 0.2em;
     background-color: var(--pricol4);
-    margin: 1.5em;
+    margin: 0.9em;
     display: flex;
     flex-direction: center;
     align-items: center;
     justify-content: center;
     transition: 0.5s;
+    margin-bottom: 1.5em;
 }
 
 .bottonDesignRegister:hover {
@@ -85,4 +112,7 @@
     transition: 0.5s;
     color: white;
     font: bold;
+}
+.designMessageError{
+    color: var(--pricol3);
 }
