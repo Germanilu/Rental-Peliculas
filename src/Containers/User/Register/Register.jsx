@@ -141,14 +141,21 @@ const Register = (props) => {
                             <input className='bottonDesign' placeholder='address' type='text' name='address' title='address' onChange={updateUserDades} />
                             <input className='bottonDesign' placeholder='password' type='password' name='password' title='password' onChange={updateUserDades} />
                             <input className="bottonDesign" placeholder='password2' type='password' name='password2' title='password2' onChange={updateUserDades} />
-                            <div className="designMessageError">
-                                {msgError}
-                            </div>
+                            
                         </div>
 
                     </div>
+                    <div className="designMessageError">
+                                {msgError}
+                            </div>
                     <div className='divBotton'>
-                        <div className="bottonDesignRegister" onClick={() => Registrate()}>REGISTRATE</div>
+                        <div className="bottonDesignRegister" onClick={() => Registrate()}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            REGISTRATE
+                        </div>
                     </div>
 
                 </div>
