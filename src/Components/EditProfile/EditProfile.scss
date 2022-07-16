@@ -5,17 +5,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;  
+    background-image: url(../../img/cinema4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
 }
 
 .titleEditProfile{
-    letter-spacing: 0.3em;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.input{
+    width: 20em;
+    height: 10em;
+    border-radius: 0.2em;
+    font-weight: 500;
+}
+
+.contraseñaEditProfile{
+    font-weight: 700;
 }
 
 
 .editProfileDesignContainer{
     height: 30em;
-    width: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,30 +39,120 @@
     gap: 0.5em;
     animation: prova 1.5s forwards 0.2s;
     opacity: -1;
-    background-color: var(--pricol3);
+    background-color: rgba(255, 255, 255, 0.904);
+    
 }
 
 .buttonContainer{
     display: flex;
-    gap: 1em;
     
 }
 .buttonEditProfile{
-    width: 5em;
-    margin-top: 1em;
-    border: 2px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 0.5em;
-    border-radius: 1em;
-    cursor: pointer;
-}
+    position: relative;
+    display: inline-block;
+    padding: 10px 41px;
+    border-radius: 4px;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin: 25px;
+    font-family: "Roboto", sans-serif;
+    filter: hue-rotate(0deg);
+    border: 2px solid #000000;
+    transition: all 0.1s linear;
+  
+    &:hover {
+      border: 1px solid transparent;
+      color: rgb(2, 2, 2);
+      cursor: pointer;
+      span {
+        position: absolute;
+        display: block;
+  
+        &:nth-child(1) {
+          filter: hue-rotate(0deg);
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(90deg, transparent, #000000);
+          animation: animate1 1s linear infinite;
+        }
+        @keyframes animate1 {
+          0% {
+            left: -100%;
+          }
+          50%,
+          100% {
+            left: 100%;
+          }
+        }
+  
+        &:nth-child(2) {
+          filter: hue-rotate(60deg);
+          top: -100%;
+          right: 0;
+          width: 3px;
+          height: 100%;
+          background: linear-gradient(180deg, transparent, #000000);
+          animation: animate2 1s linear infinite;
+          animation-delay: 0.25s;
+        }
+  
+        @keyframes animate2 {
+          0% {
+            top: -100%;
+          }
+          50%,
+          100% {
+            top: 100%;
+          }
+        }
+        &:nth-child(3) {
+          filter: hue-rotate(120deg);
+          bottom: 0;
+          right: 0;
+          width: 100%;
+  
+          background: linear-gradient(270deg, transparent, #000000);
+          animation: animate3 1s linear infinite;
+          animation-delay: 0.5s;
+        }
+        @keyframes animate3 {
+          0% {
+            right: -100%;
+            height: 3px;
+          }
+          50%,
+          100% {
+            height: 2px;
+            right: 100%;
+          }
+        }
+  
+        &:nth-child(4) {
+          filter: hue-rotate(300deg);
+          bottom: -100%;
+          left: 0;
+          width: 3px;
+          height: 100%;
+          background: linear-gradient(360deg, transparent, #000000);
+          animation: animate4 1s linear infinite;
+          animation-delay: 0.75s;
+        }
+        @keyframes animate4 {
+          0% {
+            bottom: -100%;
+          }
+          50%,
+          100% {
+            bottom: 100%;
+          }
+        }
+      }
+    }
+  }
+  
 
-@keyframes prova {
-    0%{
-        opacity: -1;
-    }
-    100%{
-        opacity: 1;
-    }
-}
+

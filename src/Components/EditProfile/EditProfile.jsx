@@ -10,8 +10,6 @@ const EditProfile = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
     
- 
-
     //Hooks
 
     const [perfilUsuario, setPerfilUsuario] = useState({
@@ -27,13 +25,7 @@ const EditProfile = () => {
          
     })
 
-
-    
-
     const [msgError, setMsgError] = useState("")
-
-
-    
 
     const handlerInputs = (e) => {
         console.log(e.target.value)
@@ -52,7 +44,6 @@ const EditProfile = () => {
         navigate('/'))
         } 
     }
-
 
     useEffect(() => {
 
@@ -76,14 +67,26 @@ const EditProfile = () => {
             <input className='input' value={perfilUsuario.user_address} type='text' name='user_address' title='address' onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_city} type='text' name='user_city' title='city' onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_mobile} type='text' name='user_mobile' title='mobile' onChange={handlerInputs} lenght='30' />
-            <p>Contraseña</p>
+            <p className='contraseñaEditProfile'>Contraseña</p>
             <input className='input' value={perfilUsuario.user_password} type='password' name='user_password' title='password' onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_password2} type='password' name='user_password2' title='password2' onChange={handlerInputs}/>
             
             <div>{msgError}</div>
             <div className="buttonContainer">
-            <div className="buttonEditProfile" onClick={()=>editDetails() }>Guardar</div>
-            <div className="buttonEditProfile" onClick={() => navigate('/')}>Cerrar</div>
+                    <div className="buttonEditProfile" onClick={() => editDetails()}>
+                        Guardar
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div className="buttonEditProfile" onClick={() => navigate('/')}>
+                        Cerrar
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
             </div>
             </div>
         </div>
