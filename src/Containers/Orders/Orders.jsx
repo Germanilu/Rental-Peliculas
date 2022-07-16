@@ -39,8 +39,23 @@ const Orders = () => {
     
         } catch (error) {
             setMsgError("De momento no tienes ninguna pelicula alquilada")
-            console.log("soy el catch",error)
+            
         }
+    }
+
+
+
+
+    const devolverPelicula = async () => {
+
+        let config = {
+            headers: { Authorization: `Bearer ${credenciales.token}` }
+        }
+
+        
+        await axios.delete(`https://buscadordepeliculas.herokuapp.com/api/order/delete=${showOrder[0]._id}`,config)
+        
+        navigate("/")
     }
 
 
@@ -49,7 +64,7 @@ const Orders = () => {
             
          { showOrder &&
             showOrder.map((data) => {
-                console.log(data)
+                // console.log(data)
                 return(
                     <div className="designOrderDetail">
                         <div className="designImg"><img className='designOrderImg' src={data.movieImg} alt={data.movieName} /></div>
@@ -57,7 +72,7 @@ const Orders = () => {
                             <div className="orderName">{data.movieName}</div>
                             <div className="orderDate">{data.orderDate}</div>
                             <div className="orderReturn">Fecha limite de devolución: {data.returnDate}</div>
-                            <div className="orderButton">Devolver Pelicula</div>
+                            <div className="orderButton" onClick={() => devolverPelicula()}>Devolver Pelicula</div>
                         </div>
                     </div>
                     
