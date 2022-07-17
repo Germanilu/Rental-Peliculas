@@ -1,7 +1,5 @@
 @import '../../App.scss';
 
-
-
 .containerMovieDetail {
     display: flex;
     align-items: center;
@@ -9,22 +7,32 @@
     height: 35em;
     padding: 1em;
     color: white;
-    background: linear-gradient(90deg, hsla(296, 100%, 6%, 1) 0%, hsla(5, 90%, 24%, 1) 100%);
+    background: #212529;
+}
+.containerDescription{
+    max-width: 40em;
 }
 
 .containerImg {
     width: 46%;
     max-width: 360px;
-    margin: 0 auto;
+    
 }
 
 .movieDetailImg {
     width: 100%;
     height: auto;
 }
+.containerDescriptionTitle{
+    padding-bottom: 1em;
+    font-size: 1.8em
+}
+.containerDescriptionDescription{
+    padding-bottom: 1em;
+}
 
 .containerDescription {
-    width: 60%;
+    width: 50%;
     height: 60%;
     display: flex;
     flex-direction: column;
@@ -32,10 +40,16 @@
     justify-content: space-around;
     padding: 0em 1em;
 }
+.alquilerButton{
+    color: white;
+    @include flex();
+    padding-top: 1em;
+}
 
 .containerDescriptionButton {
-    padding: 0.5em 1em;
-    border: 1px solid black;
+    @include button();
+    color: white;
+    margin-left:auto;
 }
 
 .msgError {
