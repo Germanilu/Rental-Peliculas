@@ -2,7 +2,7 @@
 
 - [Toc](#toc)
 - [El rincon de la película](#el-rincon-de-la-película)
-- [The website](#the-website)
+- [La App](#la-app)
 - [Img](#img)
   - [Author](#author)
       - [Luciano Germani :it:](#luciano-germani-it)
@@ -13,16 +13,16 @@
 
 # El rincon de la película
 
-*If you prefer you can read this in* [Spanish](README-ESP.md)
+*Si lo prefieres pues leer esto en * [Inglés](README.md)
 
-This project was made using React / Redux / Sass and aiming to a MongoDB Database. To check the back-end project you can click here : [Buscador de Películas](https://github.com/Germanilu/Buscador-De-Peliculas).
+Este proyecto esta creado usando React / Redux / Sass y apuntando a una base de datos de MongoDb. Para poder revisar la base de datos del proyecto puedes hacer click aqui: [Buscador de Películas](https://github.com/Germanilu/Buscador-De-Peliculas).
 
-# The website
+# La App
 
-The user can complete a register form and make a login into the website, also the user will be able to see the movie available on the website and rent one.
-You can also check your profile, edit your profile and to be able to rent a new movie you will need to return the previouse one. 
+El usuario puede registrarse en la App y hacer el login. Una vez dentro podra revisar todas las peliculas que existen en la App y alquilar la que prefiere.
+El usuario podrá tambien revisar su perfil, modificarlo y para poder alquilar una nueva pelicula tendra antes que devolver la que ya tiene alquilada.
 
-The App contain the following endpoint:
+Esta App contiene las siguientes vistas:
 
 - Register
 - Login
