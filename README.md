@@ -36,9 +36,9 @@ The App contain the following endpoint:
 
 # Img
 
-![Home](../img/../rental-peliculas/src/img/Home.png)
+![Home](../rental-peliculas/src/img/Home.png)
 
-![MovieDB](../img/../rental-peliculas/src/img/movieDb.png)
+![MovieDB](../rental-peliculas/src/img/movieDb.png)
 
 ## Author 	
 

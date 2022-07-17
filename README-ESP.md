@@ -36,9 +36,9 @@ Esta App contiene las siguientes vistas:
 
 # Img
 
-![Home](../img/../rental-peliculas/src/img/Home.png)
+![Home](../rental-peliculas/src/img/Home.png)
 
-![MovieDB](../img/../rental-peliculas/src/img/movieDb.png)
+![MovieDB](../rental-peliculas/src/img/movieDb.png)
 
 ## Author 	
 
