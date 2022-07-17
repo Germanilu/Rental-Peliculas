@@ -4,7 +4,6 @@ import axios from 'axios';
 
 import './Register.scss';
 
-
 const Register = (props) => {
 
     //HOOK con los datos a rellenar
@@ -42,8 +41,6 @@ const Register = (props) => {
     useEffect(() => {
 
     })
-
-
 
     const Registrate = async () => {
 
@@ -91,12 +88,6 @@ const Register = (props) => {
             return;
         }
 
-
-
-
-        //[TOCANDO LA PASSWORD VALIDATER]
-
-
         //enviamos los datos a la base de datos 
         let intentoRegistro = await axios.post("https://buscadordepeliculas.herokuapp.com/api/auth/register", userDades);
 
@@ -111,7 +102,6 @@ const Register = (props) => {
 
             }, 2000);
         }
-
     }
 
     if (registrado === true) {

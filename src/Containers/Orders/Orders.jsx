@@ -6,12 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import {userData} from '../../Containers/User/userSlice'
 const Orders = () => {
 
-
     const credenciales = useSelector(userData)
     const navigate = useNavigate();
  
-
-
     //Hooks
     const [showOrder, setShowOrder] = useState([])
     const [msgError, setMsgError] = useState([])
@@ -43,21 +40,16 @@ const Orders = () => {
         }
     }
 
-
-
-
     const devolverPelicula = async () => {
 
         let config = {
             headers: { Authorization: `Bearer ${credenciales.token}` }
         }
 
-        
         await axios.delete(`https://buscadordepeliculas.herokuapp.com/api/order/delete=${showOrder[0]._id}`,config)
         
         navigate("/")
     }
-
 
      return (
          <div className='designOrders'>

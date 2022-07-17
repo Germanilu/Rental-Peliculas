@@ -13,8 +13,6 @@ const Admin = () => {
     //Hooks
     const [cambiarPantalla, setCambiarPantalla] = useState([])
     const [valorInput, setValorInput] = useState()
-    const [msgError, setMsgError] = useState("")
-
 
     useEffect(() => {
 
@@ -50,7 +48,6 @@ const Admin = () => {
 
     const updateInput = e => setValorInput(e.target.value)
     
-
     const buscarOrdenesPorUsuario = async () => {
        try {
         // console.log("Soy valor input",valorInput)
@@ -66,8 +63,7 @@ const Admin = () => {
         setCambiarPantalla(resultado.data.data)
 
        } catch (error) {
-        // console.log("soy error",error.response.data.message)
-        setMsgError(error.response.data.message)
+        console.log("soy error",error.response.data.message)
        }
     }
 

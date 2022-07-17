@@ -54,8 +54,7 @@ const EditProfile = () => {
             navigate('/')
         }
     })
-
-
+    
     return (
 
         <div className='editProfileDesign'>

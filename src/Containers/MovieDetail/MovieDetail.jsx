@@ -12,14 +12,11 @@ const Detail = () => {
     let detallesPelicula = useSelector(takeData);
     let navegador = useNavigate()
     
-
     //Hooks
 
     const [msgError, setMsgError] = useState("")
-    
-    
+
     useEffect(()=>{
-        
         
     },[]);
 
@@ -49,11 +46,9 @@ const Detail = () => {
       }
     }
 
-    
     return (
       <div className="containerMovieDetail">
        
-
         <div className="containerDescription">
           <div className="containerDescriptionTitle">Titulo: {detallesPelicula.name}</div>
           <div className="containerDescriptionGenre">Genero: {detallesPelicula.genre}</div>

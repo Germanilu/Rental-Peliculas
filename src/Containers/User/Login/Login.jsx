@@ -38,8 +38,6 @@ const Login = () => {
 
     });
 
-
-
     const logueame = () => {
 
         //Compruebo con una expresion regular si el email tiene arroba y si esta escrito en formato email
@@ -67,13 +65,9 @@ const Login = () => {
 
         //Utilizo dispatch, el metodo de redux para ejecutar el reducer
         dispatch(loginUser({ email: credentials.email, password: credentials.password }))
-
-
     }
 
     return (
-
-        
 
         <div className='contenedor-login'>
             
@@ -88,7 +82,6 @@ const Login = () => {
                     <span></span>
                     Login
                 </div>
-
             </div>
         </div>
     )

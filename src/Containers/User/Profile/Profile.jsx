@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './Profile.scss';
-import { useSelector, useDispatch } from 'react-redux/es/exports';
+import { useSelector } from 'react-redux/es/exports';
 import {userData} from '../userSlice'
 import '../../../Components/EditProfile/EditProfile'
 import { useNavigate } from 'react-router-dom';
-
 
 const Profile = () => {
      
@@ -25,7 +24,6 @@ const Profile = () => {
         }
     })
 
-
     return (
          <div className='profileDesign'>
             <div className="profileContainer">
@@ -36,11 +34,9 @@ const Profile = () => {
                     <div className="containerMobile"><b>Telefono:</b> {datosUsuario.user_mobile}</div>                    
                 </div>
                 <div className="containerButtons">
-
                 <div className="button" onClick={() => navigate('/edit-profile')}>Modificar Perfil</div>  
                 <div className="button" onClick={() => navigate('/orders')}>Ver mi Pedido</div>  
                 </div>
-                
             </div>
          </div>
      )
