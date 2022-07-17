@@ -81,8 +81,14 @@ const Login = () => {
                 <input className='inputLogin' type='email' name='email' title='email' placeholder='Escribe tu Email' onChange={updateCredentials} />
                 <input className='inputLogin' type='password' name='password' title='password' placeholder='Contraseña' onChange={updateCredentials} />
                 <div className='msgErrorLogin'>{msgError}</div>
-                <div className="loginButton" onClick={()=>logueame()}>Login</div>
-                
+                <div className="loginButton" onClick={() => logueame()}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Login
+                </div>
+
             </div>
         </div>
     )

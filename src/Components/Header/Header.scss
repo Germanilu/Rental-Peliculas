@@ -35,3 +35,21 @@
     font-size: 1em;
     cursor: pointer;
 }
+
+@media (max-width: 452px){
+    .headerTitle{
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 320px){
+    .headerButtonContainer{
+        width: 10em;
+        gap: 1em;
+        font-size: 12px;
+        flex-direction: column;
+        margin-right: 0em;
+    }
+
+}
