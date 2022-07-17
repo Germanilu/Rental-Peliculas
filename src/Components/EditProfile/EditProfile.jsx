@@ -60,7 +60,7 @@ const EditProfile = () => {
 
         <div className='editProfileDesign'>
             <div className="editProfileDesignContainer">
-                <h3 className='titleEditProfile'>Mis Datos personales</h3>
+                <h3 className='titleEditProfile'>Mis Datos personaless</h3>
             <input className='input' value={perfilUsuario.user_name} type='text' name='user_name' title='name' disabled onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_surname} type='text' name='user_surname' title='surname' disabled onChange={handlerInputs} lenght='30' />
             <input className='input' value={perfilUsuario.user_email} type='text' name='user_email' title='email' onChange={handlerInputs} lenght='30' />
