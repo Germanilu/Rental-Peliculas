@@ -55,7 +55,6 @@ const EditProfile = () => {
         }
     })
 
-
     return (
 
         <div className='editProfileDesign'>

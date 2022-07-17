@@ -26,11 +26,9 @@
 .containerDescriptionTitle{
     padding-bottom: 1em;
     font-size: 1.8em
-
 }
 .containerDescriptionDescription{
     padding-bottom: 1em;
-
 }
 
 .containerDescription {
@@ -46,15 +44,12 @@
     color: white;
     @include flex();
     padding-top: 1em;
-    
 }
 
 .containerDescriptionButton {
     @include button();
     color: white;
     margin-left:auto;
-
-  
 }
 
 .msgError {
