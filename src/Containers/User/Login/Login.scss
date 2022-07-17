@@ -132,3 +132,11 @@
 .msgErrorLogin{
     color: white;
 }
+
+
+
+@media (max-width: 426px){
+    .inputLogin{
+        width: 15em;
+}
+}

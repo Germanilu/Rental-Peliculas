@@ -15,6 +15,7 @@
 }
 .divInputs{
     @include flex();
+   
 }
 .divtitle{
     width: 90%;
@@ -27,24 +28,8 @@
     color: white;
 }
 .divBotton{
-    width: 50%;
+    width: 100%;
     @include flex();
-    
-}
-
-.registerLeft {
-    height: 21em;
-    width: 25em;
-    @include flex();
-    flex-direction: column;
-    border-radius: 0.2em;
-    opacity: 0.8;
-    transition: 0.5s;
-    &:hover{
-      opacity: 0.98;
-    cursor: pointer;
-    transition: 0.5s;
-    }
 }
 
 .registerRight {
@@ -79,4 +64,20 @@
 
 .designMessageError{
     color: var(--pricol3);
+}
+
+
+@media (max-width: 426px){
+    .registerDesign {  
+        height: 100%;
+    }
+
+    .divInputs{
+        flex-direction: column;
+    }
+
+    .registerRight {
+        width: 15em;
+    }
+ 
 }

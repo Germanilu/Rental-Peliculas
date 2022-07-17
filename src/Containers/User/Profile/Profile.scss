@@ -9,7 +9,6 @@
     align-items: center;
     justify-content: space-around;
     transition: 0.5s;
-    
 }
 
 .profileContainer{
@@ -73,3 +72,27 @@
 
 
 
+
+@media (max-width: 426px){
+    .profileDesign{
+        right: 2em;
+    }
+
+    .profileContainer{
+        width: 12em;
+    }
+
+    .containerButtons{
+        gap:0em;
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 321px){
+    .profileDesign{
+        top: 8em;
+        right: 0em;
+    }
+}

@@ -130,7 +130,7 @@ const Register = (props) => {
                         <h3>Formulario de Registro</h3>
                     </div>
                     <div className='divInputs'>
-                        <div className="registerLeft">
+                        <div className="registerRight">
                             <input className='bottonDesign' placeholder='Nombre' type='text' name='name' title='name' onChange={updateUserDades} />
                             <input className='bottonDesign' placeholder='Apellido' type='text' name='surname' title='surname' onChange={updateUserDades} />
                             <input className='bottonDesign' placeholder='Email' type='email' name='email' title='email' onChange={updateUserDades} />
