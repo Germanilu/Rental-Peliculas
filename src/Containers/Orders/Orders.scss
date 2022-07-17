@@ -10,13 +10,12 @@
 .designOrderDetail{
     height: 90%;
     width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex();
+    
 }
 
 .designImg{
-    width: 46%;
+    width: 100%;
     max-width: 360px;
 }
 .designOrderImg{
@@ -47,4 +46,17 @@
 .orderName{
     padding-bottom: 1em;
     font-size: 1.8em
+}
+
+@media (max-width: 426px){
+
+    .designOrders {
+            height: 100%;
+    
+        }
+    
+        .designOrderDetail {
+            flex-direction: column;
+    
+        }
 }

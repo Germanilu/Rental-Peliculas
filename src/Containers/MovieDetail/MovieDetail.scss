@@ -14,7 +14,7 @@
 }
 
 .containerImg {
-    width: 46%;
+    width: 100%;
     max-width: 360px;
     
 }
@@ -56,4 +56,17 @@
     margin-top: 1em;
     color: green;
     text-align: center;
+}
+
+
+@media (max-width: 426px){
+    .containerMovieDetail {
+   
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .containerDescription {
+        width: 70%;
+    }
 }
