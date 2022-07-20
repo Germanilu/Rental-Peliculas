@@ -41,8 +41,7 @@ const Detail = () => {
 
       let resultado = await axios.post(`https://buscadordepeliculas.herokuapp.com/api/order/${detallesPelicula._id}`, "", config)
       setMsgError(`Has alquilado ${resultado.data.data.movieName} `)
-      console.log("Estoy aqui", resultado.data.data.movieName)
-      console.log(resultado)
+      
     } catch (error) {
       setMsgError(`${error.response.data.message}`)
       console.log(error.response.data.data)

@@ -4,6 +4,7 @@
 - [El rincon de la película](#el-rincon-de-la-película)
 - [The website](#the-website)
 - [Img](#img)
+- [Result](#result)
   - [Author](#author)
       - [Luciano Germani :it:](#luciano-germani-it)
       - [Ibrahim Alzuru Cortés  :venezuela:](#ibrahim-alzuru-cortés--venezuela)
@@ -39,6 +40,10 @@ The App contain the following endpoint:
 ![Home](./img-readme/Home.png)
 
 ![MovieDB](./img-readme//movieDb.png)
+
+# Result
+
+You can see the website here: [El Rincon De la Pelicula](https://dev.d1w3l4s3mddekq.amplifyapp.com/).
 
 ## Author 	
 

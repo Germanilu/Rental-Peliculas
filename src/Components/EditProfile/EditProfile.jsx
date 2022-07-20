@@ -28,10 +28,9 @@ const EditProfile = () => {
     const [msgError, setMsgError] = useState("")
 
     const handlerInputs = (e) => {
-        console.log(e.target.value)
+        
         setPerfilUsuario({...perfilUsuario, [e.target.name]: e.target.value})
-        console.log("Soy el perfilUsuario",perfilUsuario)
-        console.log("soy datosUsuario", datosUsuario)
+        
     }
 
     const editDetails = () => {

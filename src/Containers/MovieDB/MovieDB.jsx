@@ -58,7 +58,6 @@ const MovieDB = () => {
     const filtrar = (value) => {
         const pelisFiltradas = peliculasDefecto.filter((peli) => peli.name.includes(value));
         
-        console.log(value);
         setPeliculasFiltradas(pelisFiltradas) 
     }
 
